@@ -31,10 +31,17 @@ a:hover { color: var(--color-accent-primary); }
 /* HERO */
 .hero { display: grid; grid-template-columns: 320px 1fr; gap: var(--space-12); margin-bottom: var(--space-24); align-items: center; }
 @media (max-width: 800px) { .hero { grid-template-columns: 1fr; gap: var(--space-8); text-align: center; } }
-.headshot { width: 320px; height: 320px; border-radius: var(--radius-2xl); background: linear-gradient(135deg, #1a1a1a 0%, #262626 100%); position: relative; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-.headshot::before { content: 'Mauricio Cruz · headshot'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--color-text-tertiary); font-size: var(--fs-xs); font-style: italic; }
-.headshot::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 60% 40%, rgba(16,185,129,0.08), transparent 70%); }
-@media (max-width: 800px) { .headshot { width: 240px; height: 240px; margin: 0 auto; } }
+.headshot { width: 320px; height: 380px; border-radius: var(--radius-2xl); position: relative; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.4); background: linear-gradient(135deg, #1a1a1a 0%, #262626 100%); }
+.headshot img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+.headshot::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4)); pointer-events: none; }
+@media (max-width: 800px) { .headshot { width: 240px; height: 280px; margin: 0 auto; } }
+
+/* Avatar in nav (small) */
+.nav-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+
+/* About avatar block */
+.about-photo { width: 100%; max-width: 340px; aspect-ratio: 4/5; border-radius: var(--radius-xl); overflow: hidden; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(0); }
 .hero-eyebrow { color: var(--color-accent-primary); font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; margin-bottom: var(--space-3); }
 .hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.5rem, 5vw, 4rem); margin: 0 0 var(--space-2); letter-spacing: var(--ls-tighter); line-height: 1.05; }
 .hero .role { color: var(--color-text-secondary); font-size: var(--fs-xl); font-weight: 500; margin: 0 0 var(--space-4); }
@@ -107,7 +114,7 @@ footer { border-top: 1px solid rgba(255,255,255,0.05); padding: var(--space-8) 0
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="nav-brand">
-      <span class="nav-monogram">M</span>
+      <img src="../assets/photos/avatar-meximalist.jpg" alt="Mauricio Cruz" class="nav-avatar">
       Mauricio Cruz
     </a>
     <div class="nav-links">
@@ -124,7 +131,9 @@ footer { border-top: 1px solid rgba(255,255,255,0.05); padding: var(--space-8) 0
 
   <!-- HERO -->
   <header class="hero">
-    <div class="headshot"></div>
+    <div class="headshot">
+      <img src="../assets/photos/headshot-color.jpg" alt="Mauricio Cruz · headshot">
+    </div>
     <div>
       <div class="hero-eyebrow">Operator y builder · CDMX</div>
       <h1>Mauricio Cruz</h1>
@@ -190,12 +199,14 @@ footer { border-top: 1px solid rgba(255,255,255,0.05); padding: var(--space-8) 0
     <div class="section-eyebrow">About</div>
     <h2>Bio</h2>
 
-    <div class="bio-block">
-      <div class="label">Now</div>
+    <div style="display:grid;grid-template-columns:340px 1fr;gap:var(--space-12);align-items:start;margin-top:var(--space-8)">
+      <div class="about-photo">
+        <img src="../assets/photos/headshot-bw-arms-crossed.jpg" alt="Mauricio Cruz">
+      </div>
       <div>
-        <p><strong>Operator y builder mexicano</strong> enfocado en hacer que la IA sea operacional para empresas en México. Fundador de EmpleadoDigital.mx, donde despliego agentes de IA en infraestructura local (Mac mini + dashboard + mantenimiento mensual) para PyMEs.</p>
-        <p>En paralelo, construyo en público: opero <strong>BandaWeb3</strong>, el archivo más grande de podcasts Web3 en español con 390+ episodios. Cada día de lunes a viernes a las 12pm CDMX transmito <strong>Vibecodeando Ando</strong>, donde construyo productos con IA en tiempo real.</p>
-        <p>Filosofía: proof of value sobre proof of concept. Antes de pitchar features, demuestro outcomes — revenue generado, horas ahorradas, deals cerrados. Activo en Ethereum México y mxweb3. Publico como <a href="https://x.com/meximalist">@meximalist</a>.</p>
+        <p style="color:var(--color-text-secondary);font-size:var(--fs-base);margin:0 0 var(--space-3);max-width:640px"><strong style="color:var(--color-text-primary);font-weight:500">Operator y builder mexicano</strong> enfocado en hacer que la IA sea operacional para empresas en México. Fundador de EmpleadoDigital.mx, donde despliego agentes de IA en infraestructura local (Mac mini + dashboard + mantenimiento mensual) para PyMEs.</p>
+        <p style="color:var(--color-text-secondary);font-size:var(--fs-base);margin:0 0 var(--space-3);max-width:640px">En paralelo, construyo en público: opero <strong style="color:var(--color-text-primary);font-weight:500">BandaWeb3</strong>, el archivo más grande de podcasts Web3 en español con 390+ episodios. Cada día de lunes a viernes a las 12pm CDMX transmito <strong style="color:var(--color-text-primary);font-weight:500">Vibecodeando Ando</strong>, donde construyo productos con IA en tiempo real.</p>
+        <p style="color:var(--color-text-secondary);font-size:var(--fs-base);margin:0;max-width:640px">Filosofía: proof of value sobre proof of concept. Antes de pitchar features, demuestro outcomes — revenue generado, horas ahorradas, deals cerrados. Activo en Ethereum México y mxweb3. Publico como <a href="https://x.com/meximalist">@meximalist</a>.</p>
       </div>
     </div>
   </section>

@@ -113,13 +113,22 @@ The cross-link is intentionally low-traffic. People who need the other register 
 
 ## 6. Logo / mark usage
 
-| Surface | Wordmark | Mark | Avatar |
-|---|---|---|---|
-| `meximalist.com` | "Mauricio Cruz" Inter SemiBold, capitalized | Monogram "MC" | Real headshot |
-| `mexi.wtf` | "@meximalist" Exo 2 Bold lowercase | "M" with terminal cursor | Ape 3D |
-| Cross-references | Wordmark only, never mark | — | — |
+| Surface | Wordmark | Mark | Primary avatar | Bridge image |
+|---|---|---|---|---|
+| `meximalist.com` | "Mauricio Cruz" Inter SemiBold, capitalized | Monogram "MC" | Real headshot color (smiling) | B&W with ape cap (optional, press kit) |
+| `mexi.wtf` | "@meximalist" Exo 2 Bold lowercase | "M" with terminal cursor | Ape 3D | B&W with ape cap (in "irl" section) |
+| Cross-references | Wordmark only, never mark | — | — | — |
 
-**Never mix:** the ape avatar does not appear on `meximalist.com`. The real headshot does not appear on `mexi.wtf`. Each surface owns its visual identity completely.
+**Never mix:** the digital 3D ape avatar does not appear on `meximalist.com`. The color smiling headshot does not appear on `mexi.wtf`. Each surface owns its **primary** visual identity completely.
+
+### The bridge image (deliberate exception)
+
+The B&W photo of Mauricio wearing the ape cap is a **bridge asset** — it can appear on both surfaces because it shows continuity between the digital ape and the physical operator. It signals "the ape is merchandise the human wears, not a separate persona." Use it sparingly:
+
+- `mexi.wtf` → "irl" section (footer-area, humanizes the digital)
+- `meximalist.com` → long-form bio or press kit (signals integrated personality, not split)
+
+This is the only image that crosses between surfaces. All other photography stays in its own lane.
 
 ---
 

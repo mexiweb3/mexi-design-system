@@ -3,3 +3,6 @@ node_modules/
 .env*
 *.log
 .cache/
+
+# Original raw photos (optimized versions are committed)
+assets/photos/original/

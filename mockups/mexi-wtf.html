@@ -70,6 +70,17 @@ a:hover { color: var(--color-accent-primary-hover); }
 .icon-link:hover { color: var(--color-accent-primary); }
 .icon-link svg { width: 16px; height: 16px; }
 
+/* IRL bridge section */
+.irl { margin-bottom: var(--space-10); }
+.irl-card { display: grid; grid-template-columns: 140px 1fr; gap: var(--space-5); padding: var(--space-5); background: rgba(26, 26, 26, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius-xl); align-items: center; }
+.irl-photo { width: 140px; height: 180px; border-radius: var(--radius-lg); overflow: hidden; }
+.irl-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.irl-card h3 { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-xl); margin: 0 0 var(--space-1); }
+.irl-card p { color: var(--color-text-secondary); font-size: var(--fs-sm); margin: 0 0 var(--space-2); }
+.irl-card .meta { color: var(--color-text-tertiary); font-size: var(--fs-xs); }
+.irl-card .meta a { color: var(--color-accent-primary); }
+@media (max-width: 500px) { .irl-card { grid-template-columns: 1fr; text-align: left; } .irl-photo { width: 100%; height: 220px; } }
+
 /* FOOTER */
 footer { text-align: center; color: var(--color-text-tertiary); font-size: var(--fs-sm); padding-top: var(--space-8); border-top: 1px solid rgba(255,255,255,0.05); }
 footer p { margin: var(--space-1) 0; }
@@ -168,6 +179,19 @@ footer .pipe { color: var(--color-text-disabled); margin: 0 var(--space-2); }
         <span class="arrow">→</span>
       </div>
     </a>
+  </section>
+
+  <!-- IRL · bridge -->
+  <section class="irl">
+    <h2 class="section-h">irl</h2>
+    <div class="irl-card">
+      <div class="irl-photo"><img src="../assets/photos/bridge-ape-cap-front.jpg" alt="Mauricio con gorra ape"></div>
+      <div>
+        <h3>el humano detras del ape</h3>
+        <p>el ape no es solo el avatar. es la marca. gorras, hoodies y bordados disponibles en eventos.</p>
+        <p class="meta">para inquiries de negocio: <a href="https://meximalist.com">meximalist.com</a></p>
+      </div>
+    </div>
   </section>
 
   <!-- CONECTA -->

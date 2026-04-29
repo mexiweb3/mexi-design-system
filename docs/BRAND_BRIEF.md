@@ -142,10 +142,29 @@ A México where every business — from a taquería to a SaaS — runs on AI age
 
 | Asset | meximalist.com | mexi.wtf |
 |---|---|---|
-| **Avatar** | Real headshot (editorial, neutral background) | Ape 3D (canon: charro hat, blue aviators, bubble gum, navy stripes) |
+| **Primary avatar** | Real headshot color (editorial, neutral gray bg) | Ape 3D (canon: charro hat, blue aviators, bubble gum, navy stripes) |
 | **Wordmark** | "Mauricio Cruz" in Inter SemiBold | "@meximalist" in Exo 2 Bold lowercase |
 | **Mark** | Monogram "MC" | "M" terminal-style with cursor |
-| **Photography** | Real photos (work, talks, behind-the-scenes) | Screenshots, code, builds, memes |
+| **Photography** | Editorial B&W (V-neck, arms crossed, dots shirt) | Screenshots, code, builds, memes |
+| **Bridge asset (ape merch)** | Optional: B&W photo with ape cap on press kit / about long form | Featured in "irl" section as continuity between digital ape and human |
+
+### The ape bridge — important clarification
+
+The 3D ape is **not exclusive to mexi.wtf as a digital-only avatar**. It also exists as physical merchandise (caps, hoodies with embroidered ape logo) that Mauricio actually wears. This creates a deliberate visual bridge:
+
+- **Digital ape** = mexi.wtf primary avatar
+- **Real Mauricio (color, smiling)** = meximalist.com primary headshot
+- **Real Mauricio + ape cap (B&W, editorial)** = bridge image, showing "the ape is part of the operator's identity, not a separate persona"
+
+This bridge image can appear:
+- On `mexi.wtf` in an "irl" section near the footer (humanize the digital identity)
+- On `meximalist.com` in long-form bio or press kit (signal that the playful side is integrated, not split off)
+
+**Never:**
+- The ape avatar (digital 3D) on `meximalist.com`
+- The color smiling headshot on `mexi.wtf` (saved for the operator surface)
+
+The bridge image is the only photo that can cross between surfaces.
 
 ---
 
