@@ -1,0 +1,53 @@
+{
+  "typography": {
+    "fontFamily": {
+      "display": { "value": "'Exo 2', system-ui, sans-serif", "description": "Display / headers / brand" },
+      "body":    { "value": "'Inter', system-ui, sans-serif", "description": "Body / UI / paragraphs" },
+      "mono":    { "value": "'JetBrains Mono', 'Fira Code', monospace", "description": "Code, terminal, technical content" }
+    },
+    "fontWeight": {
+      "regular":  { "value": 400 },
+      "medium":   { "value": 500 },
+      "semibold": { "value": 600 },
+      "bold":     { "value": 800 }
+    },
+    "fontSize": {
+      "xs":   { "value": "0.75rem",  "description": "12px — captions, footnotes" },
+      "sm":   { "value": "0.875rem", "description": "14px — secondary body, labels" },
+      "base": { "value": "1rem",     "description": "16px — body default" },
+      "lg":   { "value": "1.125rem", "description": "18px — lead paragraph" },
+      "xl":   { "value": "1.25rem",  "description": "20px — H4 / lead" },
+      "2xl":  { "value": "1.5rem",   "description": "24px — H3" },
+      "3xl":  { "value": "1.875rem", "description": "30px — H2 small" },
+      "4xl":  { "value": "2.25rem",  "description": "36px — H2 default" },
+      "5xl":  { "value": "3rem",     "description": "48px — H1 default" },
+      "6xl":  { "value": "3.75rem",  "description": "60px — H1 hero" },
+      "7xl":  { "value": "4.5rem",   "description": "72px — display" }
+    },
+    "lineHeight": {
+      "tight":   { "value": 1.1, "description": "Display headers" },
+      "snug":    { "value": 1.25, "description": "H2-H4" },
+      "normal":  { "value": 1.5, "description": "Body" },
+      "relaxed": { "value": 1.75, "description": "Long-form reading" }
+    },
+    "letterSpacing": {
+      "tighter": { "value": "-0.04em", "description": "Display headers" },
+      "tight":   { "value": "-0.02em", "description": "H1-H3" },
+      "normal":  { "value": "0" },
+      "wide":    { "value": "0.025em", "description": "Subtle emphasis" },
+      "widest":  { "value": "0.2em",   "description": "Uppercase badges, eyebrow labels" }
+    },
+    "scale": {
+      "h1": { "fontFamily": "display", "fontWeight": "bold", "fontSize": "5xl", "lineHeight": "tight",   "letterSpacing": "tight" },
+      "h2": { "fontFamily": "display", "fontWeight": "bold", "fontSize": "4xl", "lineHeight": "tight",   "letterSpacing": "tight" },
+      "h3": { "fontFamily": "display", "fontWeight": "semibold", "fontSize": "2xl", "lineHeight": "snug" },
+      "h4": { "fontFamily": "display", "fontWeight": "semibold", "fontSize": "xl",  "lineHeight": "snug" },
+      "lead":      { "fontFamily": "body", "fontWeight": "medium",  "fontSize": "lg", "lineHeight": "normal" },
+      "body":      { "fontFamily": "body", "fontWeight": "regular", "fontSize": "base", "lineHeight": "normal" },
+      "secondary": { "fontFamily": "body", "fontWeight": "regular", "fontSize": "sm",   "lineHeight": "normal" },
+      "caption":   { "fontFamily": "body", "fontWeight": "regular", "fontSize": "xs",   "lineHeight": "normal" },
+      "badge":     { "fontFamily": "body", "fontWeight": "semibold", "fontSize": "xs", "letterSpacing": "widest", "textTransform": "uppercase" },
+      "code":      { "fontFamily": "mono", "fontWeight": "regular", "fontSize": "sm" }
+    }
+  }
+}

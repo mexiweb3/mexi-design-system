@@ -1,0 +1,32 @@
+{
+  "motion": {
+    "duration": {
+      "instant": { "value": "100ms", "description": "Color hovers, micro-feedback" },
+      "fast":    { "value": "200ms", "description": "Default for buttons, links" },
+      "normal":  { "value": "300ms", "description": "Card lifts, panel transitions" },
+      "slow":    { "value": "500ms", "description": "Modal, page transitions" }
+    },
+    "easing": {
+      "linear":   { "value": "linear" },
+      "default":  { "value": "ease" },
+      "in":       { "value": "cubic-bezier(0.4, 0, 1, 1)" },
+      "out":      { "value": "cubic-bezier(0, 0, 0.2, 1)" },
+      "in-out":   { "value": "cubic-bezier(0.4, 0, 0.2, 1)" },
+      "spring":   { "value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "description": "Subtle bounce — playful surfaces only" }
+    },
+    "elevation": {
+      "card-hover":     { "value": "translateY(-2px)" },
+      "featured-hover": { "value": "translateY(-3px)" },
+      "button-hover":   { "value": "translateY(-1px)" }
+    },
+    "shadow": {
+      "card-hover":     { "value": "0 10px 40px rgba(16, 185, 129, 0.10)" },
+      "featured-hover": { "value": "0 15px 50px rgba(16, 185, 129, 0.15)" },
+      "button-hover":   { "value": "0 4px 20px rgba(16, 185, 129, 0.30)" },
+      "avatar":         { "value": "0 0 30px rgba(16, 185, 129, 0.20)" }
+    },
+    "blur": {
+      "glass": { "value": "10px", "description": "Glassmorphism backdrop-blur" }
+    }
+  }
+}

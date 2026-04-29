@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <title>meximalist.com — full lockup (light)</title>
+  <rect width="800" height="240" fill="#f5f5f5"/>
+  <!-- monogram -->
+  <g transform="translate(40, 32) scale(0.7)">
+    <rect width="256" height="256" rx="56" fill="#0a0a0a"/>
+    <path d="M 44 192 L 44 72 L 60 72 L 104 132 L 148 72 L 164 72 L 164 192 L 148 192 L 148 100 L 112 152 L 96 152 L 60 100 L 60 192 Z"
+          fill="#f5f5f5"/>
+    <path d="M 220 120 a 36 36 0 1 0 0 36 L 200 156 a 20 20 0 1 1 0 -36 Z" fill="#10b981"/>
+  </g>
+  <!-- wordmark -->
+  <g transform="translate(240, 0)">
+    <text x="0" y="118" font-family="'Exo 2', 'DejaVu Sans', sans-serif" font-weight="800" font-size="60" fill="#0a0a0a" letter-spacing="-1">Mauricio Cruz</text>
+    <text x="0" y="152" font-family="'Inter', 'DejaVu Sans', sans-serif" font-weight="500" font-size="20" fill="#525252">Operator y builder · México</text>
+    <line x1="0" y1="172" x2="60" y2="172" stroke="#10b981" stroke-width="3"/>
+    <text x="0" y="200" font-family="'Inter', 'DejaVu Sans', sans-serif" font-weight="500" font-size="12" fill="#737373" letter-spacing="2">CONTACT · ADVISORY · PRESS</text>
+  </g>
+</svg>

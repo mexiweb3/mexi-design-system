@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mauricio Cruz Brand System · Review Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens/tokens.css">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    margin: 0;
+    background: var(--color-bg-gradient);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+  a { color: var(--color-accent-primary); text-decoration: none; }
+  a:hover { color: var(--color-accent-primary-hover); }
+
+  /* ─── LAYOUT ─────────────────────────────────────────────── */
+  .shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+  @media (max-width: 900px) { .shell { grid-template-columns: 1fr; } }
+
+  /* ─── SIDEBAR ────────────────────────────────────────────── */
+  .sidebar {
+    position: sticky; top: 0; align-self: start;
+    height: 100vh; overflow-y: auto;
+    background: rgba(10, 10, 10, 0.95);
+    border-right: 1px solid var(--color-border-subtle);
+    padding: var(--space-8) var(--space-6);
+    backdrop-filter: blur(20px);
+  }
+  @media (max-width: 900px) { .sidebar { position: relative; height: auto; } }
+  .sidebar-brand {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--fs-xl);
+    margin: 0 0 var(--space-1);
+    letter-spacing: var(--ls-tight);
+  }
+  .sidebar-brand .accent { color: var(--color-accent-primary); }
+  .sidebar-version { color: var(--color-text-tertiary); font-size: var(--fs-xs); margin-bottom: var(--space-8); }
+  .sidebar nav { display: flex; flex-direction: column; gap: var(--space-1); }
+  .sidebar nav a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    transition: all 150ms;
+  }
+  .sidebar nav a:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--color-text-primary);
+  }
+  .sidebar nav a.section-label {
+    color: var(--color-accent-primary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+    margin-top: var(--space-4);
+    pointer-events: none;
+  }
+  .sidebar nav a.section-label::before { content: '> '; }
+  .sidebar-foot {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border-subtle);
+    color: var(--color-text-tertiary);
+    font-size: var(--fs-xs);
+  }
+
+  /* ─── MAIN ───────────────────────────────────────────────── */
+  main { padding: var(--space-12) var(--space-8); max-width: 1400px; }
+  section { margin-bottom: var(--space-24); }
+  section h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--fs-4xl);
+    margin: 0 0 var(--space-2);
+    letter-spacing: var(--ls-tight);
+  }
+  section h2::before { content: '> '; color: var(--color-accent-primary); font-weight: 600; }
+  section .lede { color: var(--color-text-secondary); margin: 0 0 var(--space-8); max-width: 680px; }
+
+  /* ─── HERO ───────────────────────────────────────────────── */
+  .hero {
+    margin-bottom: var(--space-16);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+  .hero .eyebrow {
+    color: var(--color-accent-primary);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0 0 var(--space-3);
+    letter-spacing: var(--ls-tighter);
+    line-height: 1.05;
+  }
+  .hero p {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-lg);
+    max-width: 720px;
+    margin: 0 0 var(--space-6);
+  }
+  .hero-stats { display: flex; gap: var(--space-8); flex-wrap: wrap; }
+  .stat .num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--fs-3xl);
+    color: var(--color-accent-primary);
+    display: block;
+  }
+  .stat .lbl { font-size: var(--fs-xs); color: var(--color-text-tertiary); letter-spacing: var(--ls-wide); text-transform: uppercase; }
+
+  /* ─── ASSET GRID ─────────────────────────────────────────── */
+  .asset-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); }
+  .asset {
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: transform 200ms, border-color 200ms;
+  }
+  .asset:hover { transform: translateY(-2px); border-color: var(--color-border-accent); }
+  .asset-frame {
+    display: flex; align-items: center; justify-content: center;
+    padding: var(--space-8);
+    min-height: 220px;
+  }
+  .asset-frame.dark { background: var(--color-bg-primary); }
+  .asset-frame.light { background: var(--color-bg-inverse); }
+  .asset-frame img { max-width: 100%; max-height: 180px; }
+  .asset-meta { padding: var(--space-4) var(--space-5); border-top: 1px solid var(--color-border-subtle); }
+  .asset-meta h4 { margin: 0 0 var(--space-1); font-size: var(--fs-sm); font-weight: 600; }
+  .asset-meta p { margin: 0; color: var(--color-text-tertiary); font-size: var(--fs-xs); }
+
+  /* ─── PALETTE ────────────────────────────────────────────── */
+  .palette-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-3); margin-bottom: var(--space-8); }
+  .swatch { border-radius: var(--radius-lg); padding: var(--space-4); min-height: 120px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--color-border-subtle); }
+  .swatch .label { font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--ls-wide); text-transform: uppercase; opacity: 0.6; }
+  .swatch .name { font-size: var(--fs-sm); font-weight: 600; }
+  .swatch .hex { font-family: var(--font-mono); font-size: var(--fs-xs); opacity: 0.7; }
+  .palette-section-title { color: var(--color-accent-primary); font-size: 0.7rem; font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; margin: var(--space-6) 0 var(--space-3); }
+  .palette-section-title::before { content: '> '; }
+
+  /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+  .type-row { padding: var(--space-5) 0; border-bottom: 1px solid var(--color-border-subtle); display: grid; grid-template-columns: 1fr 200px; gap: var(--space-6); align-items: baseline; }
+  @media (max-width: 700px) { .type-row { grid-template-columns: 1fr; } }
+  .type-spec { color: var(--color-text-tertiary); font-size: var(--fs-xs); font-family: var(--font-mono); }
+
+  /* ─── COMPONENTS ─────────────────────────────────────────── */
+  .comp-block { background: var(--color-bg-tertiary); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-6); }
+  .comp-label { color: var(--color-accent-primary); font-size: 0.7rem; font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; margin-bottom: var(--space-4); }
+  .comp-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+
+  /* CARD demo */
+  .demo-card { background: rgba(26, 26, 26, 0.8); backdrop-filter: blur(10px); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); padding: var(--space-5); transition: all 300ms; }
+  .demo-card:hover { transform: translateY(-2px); border-color: var(--color-border-accent); box-shadow: var(--shadow-card-hover); }
+  .demo-card.featured { border: 2px solid rgba(16, 185, 129, 0.25); }
+  .demo-card.featured:hover { border-color: var(--color-border-strong); box-shadow: var(--shadow-featured-hover); transform: translateY(-3px); }
+  .demo-card h5 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-lg); margin: 0 0 var(--space-1); }
+  .demo-card p { color: var(--color-text-secondary); font-size: var(--fs-sm); margin: 0; }
+
+  /* BUTTONS */
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 var(--space-6); border-radius: var(--radius-md); font-family: var(--font-body); font-weight: 600; font-size: var(--fs-sm); border: 1px solid transparent; cursor: pointer; transition: all 200ms; }
+  .btn-primary { background: var(--color-accent-primary); color: #000; }
+  .btn-primary:hover { background: var(--color-accent-primary-hover); transform: translateY(-1px); box-shadow: var(--shadow-button-hover); }
+  .btn-secondary { background: transparent; color: var(--color-accent-primary); border-color: var(--color-accent-primary); }
+  .btn-secondary:hover { background: var(--color-accent-primary-muted); }
+  .btn-ghost { background: transparent; color: var(--color-text-primary); }
+  .btn-ghost:hover { color: var(--color-accent-primary); }
+
+  /* BADGES */
+  .badge { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: var(--radius-full); font-weight: 600; font-size: 0.65rem; letter-spacing: var(--ls-widest); text-transform: uppercase; }
+  .badge-live, .badge-product { background: var(--color-accent-primary); color: #000; }
+  .badge-beta { background: var(--color-accent-secondary); color: #fff; }
+  .badge-new { background: var(--color-accent-alert); color: #000; }
+  .badge-count { background: var(--color-accent-secondary-muted); color: #a5b4fc; }
+  .badge-podcast { background: var(--color-accent-primary-muted); color: #6ee7b7; }
+
+  /* INPUTS */
+  .input { width: 100%; min-height: 44px; padding: 0 var(--space-4); background: transparent; border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); color: var(--color-text-primary); font: var(--fs-base) var(--font-body); transition: border-color 200ms; }
+  .input:focus { outline: none; border-color: var(--color-border-strong); }
+  .input::placeholder { color: var(--color-text-tertiary); }
+
+  /* ─── PAIRING ────────────────────────────────────────────── */
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair-card { border-radius: var(--radius-xl); padding: var(--space-8); min-height: 320px; display: flex; flex-direction: column; }
+  .pair-mexi { background: var(--color-bg-tertiary); border: 1px solid var(--color-border-subtle); }
+  .pair-meximalist { background: #f5f5f5; color: #0a0a0a; }
+  .pair-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; }
+  .pair-mexi .pair-eyebrow { color: var(--color-accent-primary); }
+  .pair-meximalist .pair-eyebrow { color: var(--color-accent-primary); }
+  .pair-h { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-3xl); letter-spacing: var(--ls-tight); margin: var(--space-4) 0 var(--space-2); }
+  .pair-mexi .pair-h { text-transform: lowercase; }
+  .pair-body { font-size: var(--fs-sm); margin: 0 0 var(--space-6); flex-grow: 1; }
+  .pair-mexi .pair-body { color: var(--color-text-secondary); }
+  .pair-meximalist .pair-body { color: #525252; }
+  .pair-meximalist .btn-primary { background: #0a0a0a; color: #f5f5f5; }
+  .pair-meximalist .btn-primary:hover { background: #262626; }
+
+  /* ─── TOKENS TABLES ──────────────────────────────────────── */
+  .token-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+  .token-table th { text-align: left; padding: var(--space-3); border-bottom: 1px solid var(--color-border-default); color: var(--color-text-tertiary); font-weight: 600; font-size: var(--fs-xs); letter-spacing: var(--ls-wide); text-transform: uppercase; }
+  .token-table td { padding: var(--space-3); border-bottom: 1px solid var(--color-border-subtle); }
+  .token-table .var { font-family: var(--font-mono); color: var(--color-accent-primary); font-size: var(--fs-xs); }
+  .token-table .val { font-family: var(--font-mono); color: var(--color-text-primary); font-size: var(--fs-xs); }
+  .token-table .desc { color: var(--color-text-secondary); }
+
+  /* ─── VOICE BLOCKS ───────────────────────────────────────── */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  @media (max-width: 800px) { .voice-grid { grid-template-columns: 1fr; } }
+  .voice-block { background: var(--color-bg-tertiary); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .voice-block h4 { font-family: var(--font-display); margin: 0 0 var(--space-1); font-size: var(--fs-xl); font-weight: 800; }
+  .voice-block .vc { color: var(--color-text-secondary); font-size: var(--fs-sm); margin-bottom: var(--space-4); }
+  .voice-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border-subtle); font-size: var(--fs-xs); }
+  .voice-row:last-child { border-bottom: 0; }
+  .voice-row .yes { color: var(--color-accent-primary); }
+  .voice-row .no { color: var(--color-accent-destructive); text-decoration: line-through; opacity: 0.7; }
+
+  /* ─── DOCS LINKS ─────────────────────────────────────────── */
+  .docs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); }
+  .doc {
+    display: block; padding: var(--space-5);
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    transition: all 200ms;
+  }
+  .doc:hover { transform: translateY(-2px); border-color: var(--color-border-accent); }
+  .doc-name { font-family: var(--font-mono); color: var(--color-accent-primary); font-size: var(--fs-xs); }
+  .doc-title { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-base); margin: var(--space-2) 0 var(--space-1); color: var(--color-text-primary); }
+  .doc-desc { color: var(--color-text-secondary); font-size: var(--fs-xs); margin: 0; }
+
+  /* ─── CHIP ───────────────────────────────────────────────── */
+  .chip { display: inline-flex; align-items: center; gap: var(--space-2); padding: 4px 12px; border-radius: var(--radius-full); background: rgba(255,255,255,0.04); border: 1px solid var(--color-border-subtle); font-size: var(--fs-xs); color: var(--color-text-secondary); }
+  .chip strong { color: var(--color-text-primary); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h1 class="sidebar-brand">Mauricio Cruz<br><span class="accent">Brand System</span></h1>
+    <p class="sidebar-version">v1.0 · 2026-04-29</p>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a class="section-label">Surfaces</a>
+      <a href="#mockups">Mockups</a>
+      <a class="section-label">Identity</a>
+      <a href="#logos">Logos</a>
+      <a href="#avatar">Avatar</a>
+      <a href="#og">OG images</a>
+      <a class="section-label">Foundation</a>
+      <a href="#palette">Palette</a>
+      <a href="#typography">Typography</a>
+      <a href="#tokens">Tokens</a>
+      <a class="section-label">UI</a>
+      <a href="#components">Components</a>
+      <a href="#pairing">Theme pairing</a>
+      <a class="section-label">Brand</a>
+      <a href="#voice">Voice</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#docs">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      Mauricio Cruz<br>
+      <a href="mailto:m@meximalist.com">m@meximalist.com</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="overview">
+      <div class="eyebrow">Brand System · Review Dashboard</div>
+      <h1>One operator,<br>two themed surfaces.</h1>
+      <p>Dual-surface personal brand for a Mexican AI builder. <code style="color:var(--color-accent-primary)">meximalist.com</code> handles operator/B2B context with editorial restraint. <code style="color:var(--color-accent-primary)">mexi.wtf</code> handles builder/community context with terminal aesthetic. Same token foundation, two registers.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="num">2</span><span class="lbl">surfaces</span></div>
+        <div class="stat"><span class="num">38</span><span class="lbl">artifacts</span></div>
+        <div class="stat"><span class="num">5</span><span class="lbl">token files</span></div>
+        <div class="stat"><span class="num">3</span><span class="lbl">brand docs</span></div>
+        <div class="stat"><span class="num">2</span><span class="lbl">voice guides</span></div>
+      </div>
+    </section>
+
+    <!-- MOCKUPS -->
+    <section id="mockups">
+      <h2>Surface mockups</h2>
+      <p class="lede">Cómo se aplica el sistema en cada superficie. Click en el card para abrir el mockup HTML completo (tiene hover states reales).</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);margin-top:var(--space-6)">
+
+        <!-- mexi.wtf mockup -->
+        <a href="mockups/mexi-wtf.html" target="_blank" class="asset" style="text-decoration:none;color:inherit;display:block">
+          <div style="background:var(--color-bg-secondary);padding:var(--space-2) var(--space-4);display:flex;align-items:center;gap:var(--space-2);border-bottom:1px solid var(--color-border-subtle);font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--color-text-tertiary)">
+            <span style="display:flex;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#ef4444"></span><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b"></span><span style="width:10px;height:10px;border-radius:50%;background:#10b981"></span></span>
+            <span>mexi.wtf</span>
+            <span style="margin-left:auto;color:var(--color-accent-primary)">▸ open</span>
+          </div>
+          <div class="asset-frame dark" style="padding:0;align-items:flex-start;min-height:520px;overflow:hidden">
+            <img src="assets/components/mockup-mexi-wtf.png" alt="mexi.wtf mockup" style="width:100%;max-height:none;display:block">
+          </div>
+          <div class="asset-meta">
+            <h4>mexi.wtf · Builder hub (refresh)</h4>
+            <p>Mobile-first · max-w-2xl · glassmorphism · lowercase · ape avatar canon</p>
+            <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+              <span class="chip">hub de links</span>
+              <span class="chip">contenido + comunidad + conecta</span>
+              <span class="chip">cross-link → meximalist.com</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- meximalist.com mockup -->
+        <a href="mockups/meximalist.html" target="_blank" class="asset" style="text-decoration:none;color:inherit;display:block">
+          <div style="background:var(--color-bg-secondary);padding:var(--space-2) var(--space-4);display:flex;align-items:center;gap:var(--space-2);border-bottom:1px solid var(--color-border-subtle);font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--color-text-tertiary)">
+            <span style="display:flex;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#ef4444"></span><span style="width:10px;height:10px;border-radius:50%;background:#f59e0b"></span><span style="width:10px;height:10px;border-radius:50%;background:#10b981"></span></span>
+            <span>meximalist.com</span>
+            <span style="margin-left:auto;color:var(--color-accent-primary)">▸ open</span>
+          </div>
+          <div class="asset-frame dark" style="padding:0;align-items:flex-start;min-height:520px;overflow:hidden">
+            <img src="assets/components/mockup-meximalist.png" alt="meximalist.com mockup" style="width:100%;max-height:none;display:block">
+          </div>
+          <div class="asset-meta">
+            <h4>meximalist.com · Operator surface (new)</h4>
+            <p>Desktop-first · max-w-4xl · editorial · capitalized · headshot placeholder</p>
+            <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+              <span class="chip">hero split</span>
+              <span class="chip">work · building · about · contact</span>
+              <span class="chip">cross-link → mexi.wtf</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div style="background:var(--color-bg-tertiary);border:1px solid var(--color-border-subtle);border-radius:var(--radius-xl);padding:var(--space-6);margin-top:var(--space-6)">
+        <div style="color:var(--color-accent-primary);font-size:0.7rem;font-weight:600;letter-spacing:var(--ls-widest);text-transform:uppercase;margin-bottom:var(--space-3)">&gt; What changed vs current site</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)">
+          <div>
+            <h4 style="font-family:var(--font-display);font-weight:600;font-size:var(--fs-base);margin:0 0 var(--space-2)">mexi.wtf (refresh)</h4>
+            <ul style="margin:0;padding-left:var(--space-4);color:var(--color-text-secondary);font-size:var(--fs-sm);line-height:1.7">
+              <li>Mismo content, tokens consolidados desde sistema</li>
+              <li>Footer ahora tiene cross-link a meximalist.com</li>
+              <li>Featured card y hover states más coherentes</li>
+              <li>Section headers <code style="color:var(--color-accent-primary);font-family:var(--font-mono)">&gt; contenido</code> usan token <code style="color:var(--color-accent-primary);font-family:var(--font-mono)">--theme-prompt-symbol</code></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-display);font-weight:600;font-size:var(--fs-base);margin:0 0 var(--space-2)">meximalist.com (new)</h4>
+            <ul style="margin:0;padding-left:var(--space-4);color:var(--color-text-secondary);font-size:var(--fs-sm);line-height:1.7">
+              <li>Surface no existía — esta es la propuesta inicial</li>
+              <li>Hero split con headshot placeholder + name + role</li>
+              <li>Sticky nav con monogram MC y CTA persistente</li>
+              <li>4 secciones: Casos · Building · Bio · Contact</li>
+              <li>Footer cross-linkea a mexi.wtf como builder side</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section id="logos">
+      <h2>Logos</h2>
+      <p class="lede">Marks y lockups por superficie. mexi.wtf usa "M + cursor terminal", meximalist.com usa monogram "MC".</p>
+
+      <div class="asset-grid">
+        <div class="asset">
+          <div class="asset-frame dark"><img src="assets/logo/lockup-mexi-wtf-dark.png" alt="mexi.wtf full lockup"></div>
+          <div class="asset-meta"><h4>mexi.wtf · Full lockup</h4><p>Mark + wordmark + tagline · dark · 1600×480</p></div>
+        </div>
+        <div class="asset">
+          <div class="asset-frame light"><img src="assets/logo/lockup-meximalist-light.png" alt="meximalist.com full lockup"></div>
+          <div class="asset-meta"><h4>meximalist.com · Full lockup</h4><p>Monogram + wordmark · light · 1600×480</p></div>
+        </div>
+        <div class="asset">
+          <div class="asset-frame dark"><img src="assets/logo/mark-mexi-wtf-dark.png" alt="mexi.wtf mark dark" style="max-width:160px"></div>
+          <div class="asset-meta"><h4>mexi.wtf · Mark</h4><p>App icon / favicon source · dark</p></div>
+        </div>
+        <div class="asset">
+          <div class="asset-frame light"><img src="assets/logo/mark-mexi-wtf-light.png" alt="mexi.wtf mark light" style="max-width:160px"></div>
+          <div class="asset-meta"><h4>mexi.wtf · Mark</h4><p>Light variant for press / on-emerald</p></div>
+        </div>
+        <div class="asset">
+          <div class="asset-frame dark"><img src="assets/logo/mark-meximalist-dark.png" alt="meximalist.com mark dark" style="max-width:160px"></div>
+          <div class="asset-meta"><h4>meximalist.com · Monogram</h4><p>App icon / favicon source · dark</p></div>
+        </div>
+        <div class="asset">
+          <div class="asset-frame light"><img src="assets/logo/mark-meximalist-light.png" alt="meximalist.com mark light" style="max-width:160px"></div>
+          <div class="asset-meta"><h4>meximalist.com · Monogram</h4><p>Light variant</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVATAR -->
+    <section id="avatar">
+      <h2>Avatar</h2>
+      <p class="lede">El ape canon es exclusivo de mexi.wtf. meximalist.com usará foto real (pendiente).</p>
+      <div class="asset-grid">
+        <div class="asset">
+          <div class="asset-frame dark" style="min-height:280px"><img src="assets/avatar/ape.png" alt="Ape avatar" style="max-width:240px;border-radius:24px;border:4px solid rgba(16,185,129,0.3);box-shadow:0 0 30px rgba(16,185,129,0.2)"></div>
+          <div class="asset-meta"><h4>mexi.wtf · Ape avatar (canon)</h4><p>Sombrero charro · aviators · bubble gum · navy stripes</p></div>
+        </div>
+        <div class="asset">
+          <div class="asset-frame dark" style="min-height:280px;color:var(--color-text-tertiary);font-size:var(--fs-sm)">Pendiente — foto real para meximalist.com</div>
+          <div class="asset-meta"><h4>meximalist.com · Headshot</h4><p>Editorial, fondo neutro, alta resolución · TODO</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OG IMAGES -->
+    <section id="og">
+      <h2>OG Images</h2>
+      <p class="lede">1200×630 para social cards. Cada superficie tiene su propia composición.</p>
+      <div class="asset-grid">
+        <div class="asset">
+          <div class="asset-frame dark" style="padding:0"><img src="assets/og/og-mexi-wtf.png" alt="mexi.wtf OG" style="max-height:none;width:100%;display:block"></div>
+          <div class="asset-meta"><h4>mexi.wtf · OG card</h4><p>1200×630 · Open Graph + Twitter Card</p></div>
+        </div>
+        <div class="asset">
+          <div class="asset-frame light" style="padding:0"><img src="assets/og/og-meximalist.png" alt="meximalist.com OG" style="max-height:none;width:100%;display:block"></div>
+          <div class="asset-meta"><h4>meximalist.com · OG card</h4><p>1200×630 · Editorial layout</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PALETTE -->
+    <section id="palette">
+      <h2>Color palette</h2>
+      <p class="lede">Tokens compartidos entre ambos themes. mexi.wtf usa toda la paleta; meximalist.com restringe indigo y se apoya en neutrales.</p>
+
+      <div class="palette-section-title">Background</div>
+      <div class="palette-row">
+        <div class="swatch" style="background:#0a0a0a"><div><div class="label" style="color:#9ca3af">Primary</div></div><div><div class="name">mexi-black</div><div class="hex">#0a0a0a</div></div></div>
+        <div class="swatch" style="background:#111111"><div><div class="label" style="color:#9ca3af">Secondary</div></div><div><div class="name">mexi-dark</div><div class="hex">#111111</div></div></div>
+        <div class="swatch" style="background:#1a1a1a"><div><div class="label" style="color:#9ca3af">Tertiary</div></div><div><div class="name">mexi-gray</div><div class="hex">#1a1a1a</div></div></div>
+        <div class="swatch" style="background:#f5f5f5;color:#0a0a0a"><div><div class="label" style="color:#525252">Inverse</div></div><div><div class="name">cream</div><div class="hex">#f5f5f5</div></div></div>
+      </div>
+
+      <div class="palette-section-title">Accent</div>
+      <div class="palette-row">
+        <div class="swatch" style="background:#10b981;color:#000"><div><div class="label" style="color:rgba(0,0,0,0.6)">Primary</div></div><div><div class="name">emerald</div><div class="hex">#10b981</div></div></div>
+        <div class="swatch" style="background:#34d399;color:#000"><div><div class="label" style="color:rgba(0,0,0,0.6)">Hover</div></div><div><div class="name">emerald-light</div><div class="hex">#34d399</div></div></div>
+        <div class="swatch" style="background:#6366f1"><div><div class="label">Secondary</div></div><div><div class="name">indigo</div><div class="hex">#6366f1</div></div></div>
+        <div class="swatch" style="background:#f59e0b;color:#000"><div><div class="label" style="color:rgba(0,0,0,0.6)">Alert</div></div><div><div class="name">amber</div><div class="hex">#f59e0b</div></div></div>
+        <div class="swatch" style="background:#ef4444"><div><div class="label">Destructive</div></div><div><div class="name">red</div><div class="hex">#ef4444</div></div></div>
+      </div>
+
+      <div class="palette-section-title">Text on dark</div>
+      <div class="palette-row">
+        <div class="swatch" style="background:#1a1a1a"><div><div class="label" style="color:#9ca3af">Primary</div></div><div style="color:#f5f5f5"><div class="name">Primary text Aa</div><div class="hex">#f5f5f5</div></div></div>
+        <div class="swatch" style="background:#1a1a1a"><div><div class="label" style="color:#9ca3af">Secondary</div></div><div style="color:#9ca3af"><div class="name">Secondary Aa</div><div class="hex">#9ca3af</div></div></div>
+        <div class="swatch" style="background:#1a1a1a"><div><div class="label" style="color:#9ca3af">Tertiary</div></div><div style="color:#6b7280"><div class="name">Tertiary Aa</div><div class="hex">#6b7280</div></div></div>
+        <div class="swatch" style="background:#1a1a1a"><div><div class="label" style="color:#9ca3af">Disabled</div></div><div style="color:#525252"><div class="name">Disabled Aa</div><div class="hex">#525252</div></div></div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section id="typography">
+      <h2>Typography</h2>
+      <p class="lede">Exo 2 para display y brand. Inter para body y UI. JetBrains Mono para código.</p>
+
+      <div class="comp-block">
+        <div class="comp-label">Display · Exo 2</div>
+        <div class="type-row">
+          <div style="font-family:var(--font-display);font-weight:800;font-size:60px;line-height:1.05;letter-spacing:-0.02em">Construyendo con IA</div>
+          <div class="type-spec">Exo 2 · 800 · 60/63 · -2%</div>
+        </div>
+        <div class="type-row">
+          <div style="font-family:var(--font-display);font-weight:800;font-size:36px;letter-spacing:-0.01em">EmpleadoDigital.mx</div>
+          <div class="type-spec">Exo 2 · 800 · 36/40 · H2</div>
+        </div>
+        <div class="type-row">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:24px">Vibecodeando Ando</div>
+          <div class="type-spec">Exo 2 · 600 · 24/30 · H3</div>
+        </div>
+        <div class="type-row">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:20px">BandaWeb3 Spaces</div>
+          <div class="type-spec">Exo 2 · 600 · 20/25 · H4</div>
+        </div>
+      </div>
+
+      <div class="comp-block">
+        <div class="comp-label">Body · Inter</div>
+        <div class="type-row">
+          <div style="font-family:var(--font-body);font-weight:500;font-size:18px">Tu empleado de IA que nunca descansa.</div>
+          <div class="type-spec">Inter · 500 · 18/27 · lead</div>
+        </div>
+        <div class="type-row">
+          <div style="font-family:var(--font-body);font-weight:400;font-size:16px">Mac mini + agente IA + dashboard + mantenimiento mensual. Ya lo usan Chapas Burgers y Casablanca.</div>
+          <div class="type-spec">Inter · 400 · 16/24 · body</div>
+        </div>
+        <div class="type-row">
+          <div style="font-family:var(--font-body);font-weight:400;font-size:14px;color:var(--color-text-secondary)">Livestream diario lun–vie 12pm CDMX.</div>
+          <div class="type-spec">Inter · 400 · 14/21 · secondary</div>
+        </div>
+        <div class="type-row">
+          <div style="font-family:var(--font-body);font-weight:600;font-size:11px;letter-spacing:0.2em;color:var(--color-accent-primary);text-transform:uppercase">EN VIVO · 390+ EPS · PRODUCTO</div>
+          <div class="type-spec">Inter · 600 · 11 · badges</div>
+        </div>
+      </div>
+
+      <div class="comp-block">
+        <div class="comp-label">Mono · JetBrains Mono</div>
+        <pre style="background:var(--color-bg-secondary);border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:var(--space-4);font-family:var(--font-mono);color:var(--color-accent-primary);margin:0;font-size:14px">$ git push origin master
+→ Deploy automático en Vercel</pre>
+      </div>
+    </section>
+
+    <!-- TOKENS -->
+    <section id="tokens">
+      <h2>Design tokens</h2>
+      <p class="lede">CSS custom properties — fuente única de verdad. Ver <code style="color:var(--color-accent-primary)">tokens/tokens.css</code>.</p>
+
+      <h3 style="font-family:var(--font-display);margin:var(--space-8) 0 var(--space-4);font-size:var(--fs-xl)">Spacing &amp; Radius</h3>
+      <table class="token-table">
+        <thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td class="var">--space-4</td><td class="val">1rem · 16px</td><td class="desc">Base unit, default spacing</td></tr>
+          <tr><td class="var">--space-6</td><td class="val">1.5rem · 24px</td><td class="desc">Card padding, section gaps</td></tr>
+          <tr><td class="var">--space-10</td><td class="val">2.5rem · 40px</td><td class="desc">Section breaks</td></tr>
+          <tr><td class="var">--space-16</td><td class="val">4rem · 64px</td><td class="desc">Hero padding</td></tr>
+          <tr><td class="var">--radius-md</td><td class="val">0.5rem · 8px</td><td class="desc">Buttons</td></tr>
+          <tr><td class="var">--radius-xl</td><td class="val">1rem · 16px</td><td class="desc">Cards (default)</td></tr>
+          <tr><td class="var">--radius-full</td><td class="val">9999px</td><td class="desc">Pills, avatars, badges</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-family:var(--font-display);margin:var(--space-8) 0 var(--space-4);font-size:var(--fs-xl)">Motion</h3>
+      <table class="token-table">
+        <thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td class="var">--duration-fast</td><td class="val">200ms</td><td class="desc">Buttons, links</td></tr>
+          <tr><td class="var">--duration-normal</td><td class="val">300ms</td><td class="desc">Card lifts</td></tr>
+          <tr><td class="var">--ease-out</td><td class="val">cubic-bezier(0,0,0.2,1)</td><td class="desc">Default entries</td></tr>
+          <tr><td class="var">--ease-spring</td><td class="val">cubic-bezier(0.34,1.56,0.64,1)</td><td class="desc">Playful (mexi.wtf only)</td></tr>
+          <tr><td class="var">--shadow-card-hover</td><td class="val">0 10px 40px rgba(16,185,129,0.10)</td><td class="desc">Card hover glow</td></tr>
+          <tr><td class="var">--shadow-button-hover</td><td class="val">0 4px 20px rgba(16,185,129,0.30)</td><td class="desc">CTA halo</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section id="components">
+      <h2>Components (live)</h2>
+      <p class="lede">Pasa el mouse sobre cards y botones para ver hover states reales.</p>
+
+      <div class="comp-block">
+        <div class="comp-label">Cards</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-4)">
+          <div class="demo-card">
+            <div style="margin-bottom:var(--space-2)"><span class="badge badge-live">EN VIVO</span></div>
+            <h5>Vibecodeando Ando</h5>
+            <p>Livestream diario lun–vie 12pm CDMX.</p>
+          </div>
+          <div class="demo-card">
+            <div style="margin-bottom:var(--space-2)"><span class="badge badge-count">390+ eps</span></div>
+            <h5>BandaWeb3 Spaces</h5>
+            <p>El archivo más grande de Web3 en español.</p>
+          </div>
+          <div class="demo-card featured">
+            <div style="margin-bottom:var(--space-2)"><span class="badge badge-product">PRODUCTO</span></div>
+            <h5>EmpleadoDigital.mx</h5>
+            <p>Tu empleado de IA que nunca descansa.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-block">
+        <div class="comp-label">Buttons</div>
+        <div class="comp-row">
+          <button class="btn btn-primary">Agenda llamada</button>
+          <button class="btn btn-secondary">Ver más</button>
+          <button class="btn btn-ghost">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="comp-block">
+        <div class="comp-label">Badges</div>
+        <div class="comp-row">
+          <span class="badge badge-live">EN VIVO</span>
+          <span class="badge badge-product">PRODUCTO</span>
+          <span class="badge badge-beta">BETA</span>
+          <span class="badge badge-new">2026</span>
+          <span class="badge badge-count">390+ EPS</span>
+          <span class="badge badge-podcast">PODCAST</span>
+        </div>
+      </div>
+
+      <div class="comp-block">
+        <div class="comp-label">Inputs</div>
+        <div style="max-width:480px"><input class="input" type="email" placeholder="m@meximalist.com"></div>
+      </div>
+    </section>
+
+    <!-- THEME PAIRING -->
+    <section id="pairing">
+      <h2>Theme pairing</h2>
+      <p class="lede">Mismo sistema de tokens, dos expresiones. La izquierda es builder; la derecha, operator.</p>
+      <div class="pair">
+        <div class="pair-card pair-mexi">
+          <div class="pair-eyebrow">MEXI.WTF · BUILDER</div>
+          <h3 class="pair-h">construyendo con ia desde mexico</h3>
+          <p class="pair-body">livestream diario · 390+ eps · podcast · comunidad</p>
+          <div><button class="btn btn-primary">conoce mas</button></div>
+        </div>
+        <div class="pair-card pair-meximalist">
+          <div class="pair-eyebrow">MEXIMALIST.COM · OPERATOR</div>
+          <h3 class="pair-h">Mauricio Cruz</h3>
+          <p class="pair-body">Construyo agentes de IA para empresas mexicanas. EmpleadoDigital.mx, BandaWeb3, advisory selectivo.</p>
+          <div><button class="btn btn-primary">Agenda llamada</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOICE -->
+    <section id="voice">
+      <h2>Voice</h2>
+      <p class="lede">Dos registros, dos audiencias.</p>
+      <div class="voice-grid">
+        <div class="voice-block">
+          <h4>mexi.wtf</h4>
+          <div class="vc">lowercase · casual · builder · acentos opcionales · anti-corporate</div>
+          <div class="voice-row"><span class="yes">construyendo con ia desde mexico</span><span class="no">Construyendo con Inteligencia Artificial 🇲🇽</span></div>
+          <div class="voice-row"><span class="yes">tu empleado de ia que nunca descansa</span><span class="no">Solución empresarial 24/7</span></div>
+          <div class="voice-row"><span class="yes">390+ eps</span><span class="no">Más de 390 episodios disponibles</span></div>
+          <div class="voice-row"><span class="yes">> contenido</span><span class="no">📺 Contenido y Recursos</span></div>
+          <div class="voice-row"><span class="yes">listo.</span><span class="no">¡Operación completada exitosamente!</span></div>
+        </div>
+        <div class="voice-block">
+          <h4>meximalist.com</h4>
+          <div class="vc">capitalized · acentos completos · professional-warm · clear · operator</div>
+          <div class="voice-row"><span class="yes">Mauricio Cruz · Operator y builder</span><span class="no">@meximalist · builder vibes</span></div>
+          <div class="voice-row"><span class="yes">Construyo agentes de IA para empresas mexicanas.</span><span class="no">construyendo con ia desde mexico</span></div>
+          <div class="voice-row"><span class="yes">Clientes activos: Chapas Burgers, Casablanca.</span><span class="no">Hemos trabajado con varias empresas líderes</span></div>
+          <div class="voice-row"><span class="yes">Agenda una llamada</span><span class="no">¡Agenda tu llamada gratis!</span></div>
+          <div class="voice-row"><span class="yes">México</span><span class="no">Mexico / Méjico</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture">
+      <h2>Architecture</h2>
+      <p class="lede">Cuándo enviar a cada superficie.</p>
+
+      <table class="token-table">
+        <thead><tr><th>Intent</th><th>Send to</th></tr></thead>
+        <tbody>
+          <tr><td class="desc">"Quiero contratar / agendar para mi negocio"</td><td><span class="chip"><strong>meximalist.com</strong></span></td></tr>
+          <tr><td class="desc">"Quiero invertir / partner / advise"</td><td><span class="chip"><strong>meximalist.com</strong></span></td></tr>
+          <tr><td class="desc">"Soy periodista / podcaster"</td><td><span class="chip"><strong>meximalist.com</strong>/press</span></td></tr>
+          <tr><td class="desc">"Lo vi en X y quiero ver qué construye"</td><td><span class="chip"><strong>mexi.wtf</strong></span></td></tr>
+          <tr><td class="desc">"Quiero unirme a la comunidad"</td><td><span class="chip"><strong>mexi.wtf</strong></span></td></tr>
+          <tr><td class="desc">"Quiero el podcast / livestream"</td><td><span class="chip"><strong>mexi.wtf</strong></span></td></tr>
+          <tr><td class="desc">"Quiero usar un producto"</td><td><span class="chip">empleadodigital.mx (directo)</span></td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3);flex-wrap:wrap">
+        <span class="chip">DNS · A record → Vercel</span>
+        <span class="chip">Email · <strong>m@meximalist.com</strong></span>
+        <span class="chip">Cross-link · footer only</span>
+        <span class="chip">No mixing avatars between surfaces</span>
+      </div>
+    </section>
+
+    <!-- DOCS -->
+    <section id="docs">
+      <h2>Docs &amp; tokens</h2>
+      <p class="lede">Source of truth — abrir directo en el repo.</p>
+
+      <div class="docs-grid">
+        <a class="doc" href="docs/BRAND_BRIEF.md">
+          <div class="doc-name">docs/BRAND_BRIEF.md</div>
+          <div class="doc-title">Brand Brief</div>
+          <p class="doc-desc">Vision, mission, audience, positioning, dual-brand strategy</p>
+        </a>
+        <a class="doc" href="docs/BRAND_ARCHITECTURE.md">
+          <div class="doc-name">docs/BRAND_ARCHITECTURE.md</div>
+          <div class="doc-title">Brand Architecture</div>
+          <p class="doc-desc">Cuándo usar cada surface, cross-linking, decision tree</p>
+        </a>
+        <a class="doc" href="docs/DESIGN_SYSTEM.md">
+          <div class="doc-name">docs/DESIGN_SYSTEM.md</div>
+          <div class="doc-title">Design System</div>
+          <p class="doc-desc">Tokens, componentes, accessibility, layout patterns</p>
+        </a>
+        <a class="doc" href="themes/mexi-wtf/voice.md">
+          <div class="doc-name">themes/mexi-wtf/voice.md</div>
+          <div class="doc-title">Voice · mexi.wtf</div>
+          <p class="doc-desc">Builder voice — lowercase, casual, anti-corporate</p>
+        </a>
+        <a class="doc" href="themes/meximalist/voice.md">
+          <div class="doc-name">themes/meximalist/voice.md</div>
+          <div class="doc-title">Voice · meximalist.com</div>
+          <p class="doc-desc">Operator voice — capitalized, acentos, professional-warm</p>
+        </a>
+        <a class="doc" href="tokens/tokens.css">
+          <div class="doc-name">tokens/tokens.css</div>
+          <div class="doc-title">Tokens · CSS vars</div>
+          <p class="doc-desc">Single source CSS custom properties — color/type/space/motion</p>
+        </a>
+        <a class="doc" href="tokens/color.json">
+          <div class="doc-name">tokens/color.json</div>
+          <div class="doc-title">Tokens · Color</div>
+          <p class="doc-desc">Color tokens — JSON schema</p>
+        </a>
+        <a class="doc" href="tokens/typography.json">
+          <div class="doc-name">tokens/typography.json</div>
+          <div class="doc-title">Tokens · Typography</div>
+          <p class="doc-desc">Type scale, weights, families</p>
+        </a>
+        <a class="doc" href="tokens/spacing.json">
+          <div class="doc-name">tokens/spacing.json</div>
+          <div class="doc-title">Tokens · Spacing</div>
+          <p class="doc-desc">Spacing, radius, container, touch targets</p>
+        </a>
+        <a class="doc" href="tokens/motion.json">
+          <div class="doc-name">tokens/motion.json</div>
+          <div class="doc-title">Tokens · Motion</div>
+          <p class="doc-desc">Duration, easing, elevation, shadow, blur</p>
+        </a>
+        <a class="doc" href="themes/mexi-wtf/theme.css">
+          <div class="doc-name">themes/mexi-wtf/theme.css</div>
+          <div class="doc-title">Theme · mexi.wtf</div>
+          <p class="doc-desc">Builder overrides — glassmorphism, prompt headers, spring motion</p>
+        </a>
+        <a class="doc" href="themes/meximalist/theme.css">
+          <div class="doc-name">themes/meximalist/theme.css</div>
+          <div class="doc-title">Theme · meximalist.com</div>
+          <p class="doc-desc">Operator overrides — editorial, hairline accents, conservative motion</p>
+        </a>
+        <a class="doc" href="components/component-sheet.html">
+          <div class="doc-name">components/component-sheet.html</div>
+          <div class="doc-title">Component Sheet (HTML)</div>
+          <p class="doc-desc">Live primitives renderizados — abrir en navegador</p>
+        </a>
+        <a class="doc" href="README.md">
+          <div class="doc-name">README.md</div>
+          <div class="doc-title">README</div>
+          <p class="doc-desc">Folder map, upload instructions for Claude Design</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>

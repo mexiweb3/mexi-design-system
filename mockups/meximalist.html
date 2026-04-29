@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mauricio Cruz · Operator y builder · México</title>
+<meta name="description" content="Construyo agentes de IA para empresas mexicanas. EmpleadoDigital.mx, BandaWeb3, advisory selectivo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg-primary); color: var(--color-text-primary); font-family: var(--font-body); line-height: 1.5; min-height: 100vh; }
+a { color: var(--color-text-primary); text-decoration: none; transition: color 200ms; }
+a:hover { color: var(--color-accent-primary); }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(20px); background: rgba(10,10,10,0.8); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.nav-inner { max-width: 64rem; margin: 0 auto; padding: var(--space-4) var(--space-8); display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-body); font-weight: 600; font-size: var(--fs-base); }
+.nav-monogram { width: 28px; height: 28px; border-radius: 6px; background: var(--color-accent-primary); color: #000; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 700; font-size: 13px; }
+.nav-links { display: flex; gap: var(--space-6); font-size: var(--fs-sm); color: var(--color-text-secondary); }
+.nav-links a:hover { color: var(--color-text-primary); }
+.nav-cta { padding: var(--space-2) var(--space-4); background: var(--color-accent-primary); color: #000; border-radius: var(--radius-md); font-weight: 600; font-size: var(--fs-sm); }
+.nav-cta:hover { background: var(--color-accent-primary-hover); color: #000; transform: translateY(-1px); }
+
+/* WRAP */
+.wrap { max-width: 64rem; margin: 0 auto; padding: var(--space-12) var(--space-8); }
+
+/* HERO */
+.hero { display: grid; grid-template-columns: 320px 1fr; gap: var(--space-12); margin-bottom: var(--space-24); align-items: center; }
+@media (max-width: 800px) { .hero { grid-template-columns: 1fr; gap: var(--space-8); text-align: center; } }
+.headshot { width: 320px; height: 320px; border-radius: var(--radius-2xl); background: linear-gradient(135deg, #1a1a1a 0%, #262626 100%); position: relative; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+.headshot::before { content: 'Mauricio Cruz · headshot'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--color-text-tertiary); font-size: var(--fs-xs); font-style: italic; }
+.headshot::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 60% 40%, rgba(16,185,129,0.08), transparent 70%); }
+@media (max-width: 800px) { .headshot { width: 240px; height: 240px; margin: 0 auto; } }
+.hero-eyebrow { color: var(--color-accent-primary); font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; margin-bottom: var(--space-3); }
+.hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.5rem, 5vw, 4rem); margin: 0 0 var(--space-2); letter-spacing: var(--ls-tighter); line-height: 1.05; }
+.hero .role { color: var(--color-text-secondary); font-size: var(--fs-xl); font-weight: 500; margin: 0 0 var(--space-4); }
+.hero .accent-line { width: 60px; height: 3px; background: var(--color-accent-primary); margin: var(--space-4) 0; }
+@media (max-width: 800px) { .hero .accent-line { margin: var(--space-4) auto; } }
+.hero p { color: var(--color-text-secondary); font-size: var(--fs-lg); max-width: 520px; margin: 0 0 var(--space-6); }
+.hero-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+@media (max-width: 800px) { .hero-cta-row { justify-content: center; } }
+.btn { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; padding: 0 var(--space-6); border-radius: var(--radius-md); font-weight: 600; font-size: var(--fs-sm); transition: all 200ms; cursor: pointer; }
+.btn-primary { background: var(--color-accent-primary); color: #000; }
+.btn-primary:hover { background: var(--color-accent-primary-hover); color: #000; transform: translateY(-1px); box-shadow: var(--shadow-button-hover); }
+.btn-secondary { border: 1px solid rgba(255,255,255,0.15); color: var(--color-text-primary); }
+.btn-secondary:hover { border-color: var(--color-accent-primary); color: var(--color-accent-primary); }
+
+/* SECTION */
+.section { margin-bottom: var(--space-24); }
+.section-eyebrow { color: var(--color-accent-primary); font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; margin-bottom: var(--space-3); }
+.section h2 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-3xl); margin: 0 0 var(--space-2); letter-spacing: var(--ls-tight); }
+.section h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--color-accent-primary); margin-top: var(--space-3); }
+.section-lede { color: var(--color-text-secondary); font-size: var(--fs-lg); max-width: 600px; margin: 0 0 var(--space-10); }
+
+/* CASES (work) */
+.cases { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+@media (max-width: 700px) { .cases { grid-template-columns: 1fr; } }
+.case { padding: var(--space-8); background: var(--color-bg-tertiary); border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.05); transition: border-color 200ms, transform 200ms; }
+.case:hover { border-color: var(--color-border-accent); transform: translateY(-2px); }
+.case-meta { display: flex; gap: var(--space-3); font-size: var(--fs-xs); color: var(--color-text-tertiary); margin-bottom: var(--space-3); letter-spacing: var(--ls-wide); text-transform: uppercase; font-weight: 600; }
+.case-meta .dot { color: var(--color-accent-primary); }
+.case h3 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-xl); margin: 0 0 var(--space-2); }
+.case p { color: var(--color-text-secondary); font-size: var(--fs-sm); margin: 0 0 var(--space-4); }
+.case .stat { font-family: var(--font-mono); color: var(--color-accent-primary); font-size: var(--fs-sm); font-weight: 500; }
+
+/* BUILDING (current projects) */
+.building-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+@media (max-width: 800px) { .building-grid { grid-template-columns: 1fr; } }
+.build-card { padding: var(--space-5); background: var(--color-bg-tertiary); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05); transition: all 200ms; }
+.build-card:hover { border-color: var(--color-border-accent); }
+.build-card .label { font-size: var(--fs-xs); color: var(--color-text-tertiary); letter-spacing: var(--ls-wide); text-transform: uppercase; font-weight: 600; margin-bottom: var(--space-2); }
+.build-card h4 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-base); margin: 0 0 var(--space-1); }
+.build-card p { color: var(--color-text-secondary); font-size: var(--fs-sm); margin: 0; }
+
+/* BIO */
+.bio-block { display: grid; grid-template-columns: 200px 1fr; gap: var(--space-12); align-items: start; }
+@media (max-width: 800px) { .bio-block { grid-template-columns: 1fr; gap: var(--space-4); } }
+.bio-block .label { color: var(--color-text-tertiary); font-size: var(--fs-xs); letter-spacing: var(--ls-widest); text-transform: uppercase; font-weight: 600; }
+.bio-block p { color: var(--color-text-secondary); font-size: var(--fs-base); margin: 0 0 var(--space-3); max-width: 640px; }
+.bio-block p:last-child { margin-bottom: 0; }
+.bio-block strong { color: var(--color-text-primary); font-weight: 500; }
+
+/* CONTACT */
+.contact { padding: var(--space-12); background: var(--color-bg-tertiary); border-radius: var(--radius-2xl); border: 1px solid rgba(255,255,255,0.05); display: grid; grid-template-columns: 1fr 320px; gap: var(--space-12); align-items: center; }
+@media (max-width: 800px) { .contact { grid-template-columns: 1fr; padding: var(--space-8); } }
+.contact h2 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-3xl); margin: 0 0 var(--space-3); letter-spacing: var(--ls-tight); }
+.contact p { color: var(--color-text-secondary); font-size: var(--fs-base); margin: 0 0 var(--space-6); }
+.contact-info { font-family: var(--font-mono); font-size: var(--fs-sm); }
+.contact-info .row { display: flex; gap: var(--space-3); margin-bottom: var(--space-2); }
+.contact-info .label { color: var(--color-text-tertiary); width: 60px; }
+.contact-info a { color: var(--color-accent-primary); }
+
+/* FOOTER */
+footer { border-top: 1px solid rgba(255,255,255,0.05); padding: var(--space-8) 0; margin-top: var(--space-16); }
+.foot-inner { max-width: 64rem; margin: 0 auto; padding: 0 var(--space-8); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); color: var(--color-text-tertiary); font-size: var(--fs-xs); }
+.foot-inner a { color: var(--color-text-tertiary); }
+.foot-inner a:hover { color: var(--color-accent-primary); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <span class="nav-monogram">M</span>
+      Mauricio Cruz
+    </a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#building">Building</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Agenda llamada</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="headshot"></div>
+    <div>
+      <div class="hero-eyebrow">Operator y builder · CDMX</div>
+      <h1>Mauricio Cruz</h1>
+      <p class="role">Construyo agentes de IA para empresas mexicanas.</p>
+      <div class="accent-line"></div>
+      <p>Operator de EmpleadoDigital.mx (Chapas Burgers, Casablanca) y builder en público de BandaWeb3, Vibecodeando Ando y Proof of Value. Spanish-first. México.</p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn btn-primary">Agenda una llamada →</a>
+        <a href="#work" class="btn btn-secondary">Ver casos de estudio</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="section-eyebrow">Selected work</div>
+    <h2>Casos de estudio</h2>
+    <p class="section-lede">Implementaciones reales con resultados medibles. Foco en PyMEs mexicanas, retail y servicios.</p>
+
+    <div class="cases">
+      <div class="case">
+        <div class="case-meta">EmpleadoDigital.mx <span class="dot">·</span> 2025–activo</div>
+        <h3>Chapas Burgers</h3>
+        <p>Agente de IA para gestión de pedidos y reservas vía WhatsApp. Mac mini local + dashboard + mantenimiento mensual.</p>
+        <div class="stat">15+ horas/semana ahorradas en operación</div>
+      </div>
+      <div class="case">
+        <div class="case-meta">EmpleadoDigital.mx <span class="dot">·</span> 2025–activo</div>
+        <h3>Casablanca</h3>
+        <p>Agente conversacional para clientes, integrado con sistema de inventario. Despliegue local, sin dependencia de cloud.</p>
+        <div class="stat">Respuesta &lt; 30s · 24/7</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDING -->
+  <section class="section" id="building">
+    <div class="section-eyebrow">Currently shipping</div>
+    <h2>Building in public</h2>
+    <p class="section-lede">Procesos abiertos, decisiones documentadas. Cada día de lunes a viernes, en vivo.</p>
+
+    <div class="building-grid">
+      <a href="https://bw3.mexi.wtf" class="build-card">
+        <div class="label">PODCAST · 390+ EPS</div>
+        <h4>BandaWeb3</h4>
+        <p>El archivo más grande de Web3 en español. X Spaces.</p>
+      </a>
+      <a href="https://vibecodeando.mexi.wtf" class="build-card">
+        <div class="label">LIVESTREAM · DIARIO</div>
+        <h4>Vibecodeando Ando</h4>
+        <p>Construyendo con IA en vivo. Lun–vie 12pm CDMX.</p>
+      </a>
+      <a href="https://empleadodigital.mx" class="build-card">
+        <div class="label">PRODUCTO · ACTIVO</div>
+        <h4>EmpleadoDigital.mx</h4>
+        <p>Agentes de IA on-prem para PyMEs. Mac mini + agente.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-eyebrow">About</div>
+    <h2>Bio</h2>
+
+    <div class="bio-block">
+      <div class="label">Now</div>
+      <div>
+        <p><strong>Operator y builder mexicano</strong> enfocado en hacer que la IA sea operacional para empresas en México. Fundador de EmpleadoDigital.mx, donde despliego agentes de IA en infraestructura local (Mac mini + dashboard + mantenimiento mensual) para PyMEs.</p>
+        <p>En paralelo, construyo en público: opero <strong>BandaWeb3</strong>, el archivo más grande de podcasts Web3 en español con 390+ episodios. Cada día de lunes a viernes a las 12pm CDMX transmito <strong>Vibecodeando Ando</strong>, donde construyo productos con IA en tiempo real.</p>
+        <p>Filosofía: proof of value sobre proof of concept. Antes de pitchar features, demuestro outcomes — revenue generado, horas ahorradas, deals cerrados. Activo en Ethereum México y mxweb3. Publico como <a href="https://x.com/meximalist">@meximalist</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="contact">
+      <div>
+        <div class="section-eyebrow" style="margin-bottom:var(--space-3)">Contact</div>
+        <h2>Inquiries de negocio</h2>
+        <p>Advisory selectivo para empresas mexicanas evaluando AI-native operations. Press y podcast hosts también — m@meximalist.com.</p>
+        <a href="https://call.mexi.wtf" class="btn btn-primary">Agenda 30 min →</a>
+      </div>
+      <div class="contact-info">
+        <div class="row"><span class="label">Email</span><a href="mailto:m@meximalist.com">m@meximalist.com</a></div>
+        <div class="row"><span class="label">Calendar</span><a href="https://call.mexi.wtf">call.mexi.wtf</a></div>
+        <div class="row"><span class="label">Builder</span><a href="https://mexi.wtf">mexi.wtf</a></div>
+        <div class="row"><span class="label">X</span><a href="https://x.com/meximalist">@meximalist</a></div>
+        <div class="row"><span class="label">Loc</span><span style="color:var(--color-text-secondary)">Ciudad de México</span></div>
+        <div class="row"><span class="label">Idioma</span><span style="color:var(--color-text-secondary)">ES · EN</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div>© 2026 Mauricio Cruz · Made in México</div>
+    <div>También construyo en público en <a href="https://mexi.wtf">mexi.wtf</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f5f5f5"/>
+
+  <!-- left content -->
+  <text x="80" y="80" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#10b981" letter-spacing="3">MEXIMALIST.COM</text>
+
+  <text x="80" y="200" font-family="'Exo 2', sans-serif" font-weight="800" font-size="84" fill="#0a0a0a" letter-spacing="-2">Mauricio Cruz</text>
+  <text x="80" y="252" font-family="'Inter', sans-serif" font-weight="500" font-size="28" fill="#525252">Operator y builder · México</text>
+
+  <line x1="80" y1="300" x2="180" y2="300" stroke="#10b981" stroke-width="3"/>
+
+  <text x="80" y="356" font-family="'Inter', sans-serif" font-weight="400" font-size="22" fill="#262626">Construyo agentes de IA para empresas</text>
+  <text x="80" y="386" font-family="'Inter', sans-serif" font-weight="400" font-size="22" fill="#262626">mexicanas. EmpleadoDigital.mx, BandaWeb3,</text>
+  <text x="80" y="416" font-family="'Inter', sans-serif" font-weight="400" font-size="22" fill="#262626">advisory selectivo.</text>
+
+  <!-- contact strip -->
+  <g transform="translate(80, 490)" font-family="'Inter', sans-serif">
+    <text font-weight="600" font-size="14" fill="#0a0a0a">m@meximalist.com</text>
+    <text y="24" font-weight="400" font-size="14" fill="#737373">Ciudad de México · ES / EN</text>
+  </g>
+
+  <!-- right side: monogram MC -->
+  <g transform="translate(820, 180)" font-family="'Inter', sans-serif" font-weight="600">
+    <text font-size="220" fill="#0a0a0a" letter-spacing="-8">M</text>
+    <text x="148" y="60" font-size="160" fill="#10b981" letter-spacing="-4">C</text>
+  </g>
+
+  <!-- footer line -->
+  <line x1="80" y1="565" x2="1120" y2="565" stroke="#e5e5e5"/>
+  <text x="80" y="600" font-family="'Inter', sans-serif" font-weight="400" font-size="13" fill="#737373">© 2026 Mauricio Cruz · Made in México · meximalist.com</text>
+</svg>

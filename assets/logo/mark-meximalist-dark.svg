@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>meximalist.com — monogram MC (dark)</title>
+  <rect width="256" height="256" rx="56" fill="#0a0a0a"/>
+  <!-- M (geometric, lighter weight than mexi.wtf mark) -->
+  <path d="M 44 192 L 44 72 L 60 72 L 104 132 L 148 72 L 164 72 L 164 192 L 148 192 L 148 100 L 112 152 L 96 152 L 60 100 L 60 192 Z"
+        fill="#f5f5f5"/>
+  <!-- C, accent emerald -->
+  <path d="M 220 120
+           a 36 36 0 1 0 0 36
+           L 200 156
+           a 20 20 0 1 1 0 -36 Z"
+        fill="#10b981"/>
+</svg>

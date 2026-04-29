@@ -1,0 +1,123 @@
+/*
+ * Mauricio Cruz Brand System — Core tokens
+ * Shared between meximalist.com and mexi.wtf themes.
+ * Theme-specific overrides live in /themes/{theme}/theme.css.
+ */
+
+:root {
+  /* ─── COLOR · BACKGROUND ─────────────────────────────────────── */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-bg-tertiary: #1a1a1a;
+  --color-bg-inverse: #f5f5f5;
+  --color-bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+
+  /* ─── COLOR · ACCENT ─────────────────────────────────────────── */
+  --color-accent-primary: #10b981;
+  --color-accent-primary-hover: #34d399;
+  --color-accent-primary-muted: rgba(16, 185, 129, 0.15);
+  --color-accent-secondary: #6366f1;
+  --color-accent-secondary-muted: rgba(99, 102, 241, 0.20);
+  --color-accent-alert: #f59e0b;
+  --color-accent-destructive: #ef4444;
+
+  /* ─── COLOR · TEXT ───────────────────────────────────────────── */
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #9ca3af;
+  --color-text-tertiary: #6b7280;
+  --color-text-disabled: #525252;
+  --color-text-inverse: #0a0a0a;
+
+  /* ─── COLOR · BORDER ─────────────────────────────────────────── */
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-default: rgba(255, 255, 255, 0.10);
+  --color-border-accent: rgba(16, 185, 129, 0.30);
+  --color-border-strong: rgba(16, 185, 129, 0.50);
+
+  /* ─── TYPOGRAPHY ─────────────────────────────────────────────── */
+  --font-display: 'Exo 2', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 800;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+  --fs-6xl: 3.75rem;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  --ls-tighter: -0.04em;
+  --ls-tight: -0.02em;
+  --ls-normal: 0;
+  --ls-wide: 0.025em;
+  --ls-widest: 0.2em;
+
+  /* ─── SPACING ────────────────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* ─── RADIUS ─────────────────────────────────────────────────── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ─── CONTAINER ──────────────────────────────────────────────── */
+  --container-narrow: 32rem;
+  --container-default: 42rem;
+  --container-wide: 64rem;
+  --container-full: 80rem;
+
+  /* ─── MOTION ─────────────────────────────────────────────────── */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ─── ELEVATION ──────────────────────────────────────────────── */
+  --shadow-card-hover: 0 10px 40px rgba(16, 185, 129, 0.10);
+  --shadow-featured-hover: 0 15px 50px rgba(16, 185, 129, 0.15);
+  --shadow-button-hover: 0 4px 20px rgba(16, 185, 129, 0.30);
+  --shadow-avatar: 0 0 30px rgba(16, 185, 129, 0.20);
+
+  --blur-glass: 10px;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

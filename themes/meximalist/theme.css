@@ -1,0 +1,82 @@
+/*
+ * Theme: meximalist.com — Professional surface
+ * Audience: B2B clients, press, partners, investors, recruiters
+ * Vibe: editorial, restrained, capitalized, real photography, more whitespace
+ */
+
+@import url('../../tokens/tokens.css');
+
+[data-theme="meximalist"] {
+  /* Background — solid, less glassmorphism */
+  --theme-bg: var(--color-bg-primary);
+  --theme-surface: var(--color-bg-tertiary);
+  --theme-surface-blur: 0;
+  --theme-surface-border: var(--color-border-default);
+
+  /* Accent register — emerald as accent only, no indigo */
+  --theme-accent: var(--color-accent-primary);
+  --theme-accent-secondary: var(--color-text-secondary);
+  --theme-accent-alert: var(--color-accent-alert);
+
+  /* Typography — Inter leads, Exo 2 only on H1 */
+  --theme-font-display: var(--font-body);
+  --theme-h1-weight: var(--fw-bold);
+  --theme-h1-case: none;
+  --theme-prompt-symbol: '';
+
+  /* Motion — conservative, no playful spring */
+  --theme-card-hover-y: -1px;
+  --theme-button-easing: var(--ease-out);
+
+  /* Avatar — real headshot */
+  --theme-avatar-asset: url('../../assets/avatar/headshot.jpg');
+  --theme-avatar-border: 0;
+  --theme-avatar-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Light "press mode" override — only on meximalist.com */
+[data-theme="meximalist"][data-mode="light"] {
+  --theme-bg: var(--color-bg-inverse);
+  --theme-surface: #ffffff;
+  --theme-surface-border: rgba(0, 0, 0, 0.08);
+  --color-text-primary: var(--color-text-inverse);
+  --color-text-secondary: #525252;
+  --color-text-tertiary: #737373;
+}
+
+/* Editorial component variants */
+[data-theme="meximalist"] .card {
+  background: var(--theme-surface);
+  border: 1px solid var(--theme-surface-border);
+  border-radius: var(--radius-lg);
+  transition: transform var(--duration-fast) var(--theme-button-easing),
+              border-color var(--duration-fast) var(--theme-button-easing);
+}
+
+[data-theme="meximalist"] .card:hover {
+  transform: translateY(var(--theme-card-hover-y));
+  border-color: var(--color-border-accent);
+}
+
+[data-theme="meximalist"] h1 {
+  font-family: var(--font-display);
+  font-weight: var(--theme-h1-weight);
+  letter-spacing: var(--ls-tight);
+}
+
+[data-theme="meximalist"] h2,
+[data-theme="meximalist"] h3,
+[data-theme="meximalist"] h4 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+}
+
+/* Editorial details: hairline accent under headings */
+[data-theme="meximalist"] .section-header::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--theme-accent);
+  margin-top: var(--space-3);
+}

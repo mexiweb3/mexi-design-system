@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Component Sheet · Mauricio Cruz Brand System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<style>
+  body {
+    margin: 0;
+    background: var(--color-bg-gradient);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    padding: var(--space-12) var(--space-8);
+  }
+  .sheet { max-width: 1200px; margin: 0 auto; }
+  .sheet > h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--fs-5xl);
+    margin: 0 0 var(--space-2);
+    letter-spacing: var(--ls-tight);
+  }
+  .sheet > .subtitle {
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-12);
+  }
+  .section {
+    margin-bottom: var(--space-16);
+  }
+  .section-header {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    color: var(--color-accent-primary);
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-6);
+  }
+  .section-header::before { content: '> '; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-6); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+
+  /* CARD */
+  .card {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: transform var(--duration-normal) var(--ease-out),
+                border-color var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-border-accent);
+    box-shadow: var(--shadow-card-hover);
+  }
+  .card-featured {
+    border: 2px solid rgba(16, 185, 129, 0.25);
+    box-shadow: 0 4px 30px rgba(16, 185, 129, 0.08);
+  }
+  .card-featured:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-featured-hover);
+  }
+  .card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-xl);
+    margin: 0 0 var(--space-1);
+  }
+  .card-description {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-sm);
+    margin: 0;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 0 var(--space-6);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body); font-weight: 600; font-size: var(--fs-sm);
+    border: 1px solid transparent;
+    cursor: pointer; text-decoration: none;
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+  .btn-primary { background: var(--color-accent-primary); color: #000; }
+  .btn-primary:hover { background: var(--color-accent-primary-hover); transform: translateY(-1px); box-shadow: var(--shadow-button-hover); }
+  .btn-secondary { background: transparent; color: var(--color-accent-primary); border-color: var(--color-accent-primary); }
+  .btn-secondary:hover { background: var(--color-accent-primary-muted); }
+  .btn-ghost { background: transparent; color: var(--color-text-primary); }
+  .btn-ghost:hover { color: var(--color-accent-primary); }
+
+  /* BADGES */
+  .badge {
+    display: inline-flex; align-items: center;
+    padding: 2px 10px; border-radius: var(--radius-full);
+    font-family: var(--font-body); font-weight: 600;
+    font-size: 0.65rem; letter-spacing: var(--ls-widest); text-transform: uppercase;
+  }
+  .badge-live, .badge-product { background: var(--color-accent-primary); color: #000; }
+  .badge-beta { background: var(--color-accent-secondary); color: #fff; }
+  .badge-new { background: var(--color-accent-alert); color: #000; }
+  .badge-count { background: var(--color-accent-secondary-muted); color: #a5b4fc; }
+  .badge-podcast { background: var(--color-accent-primary-muted); color: #6ee7b7; }
+
+  /* INPUT */
+  .input {
+    width: 100%; min-height: 44px; padding: 0 var(--space-4);
+    background: transparent;
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-family: var(--font-body); font-size: var(--fs-base);
+    transition: border-color var(--duration-fast);
+  }
+  .input:focus { outline: none; border-color: var(--color-border-strong); }
+  .input::placeholder { color: var(--color-text-tertiary); }
+
+  /* AVATAR */
+  .avatar {
+    width: 80px; height: 80px; border-radius: var(--radius-full);
+    border: 4px solid var(--color-border-accent);
+    box-shadow: var(--shadow-avatar);
+    background: var(--color-bg-tertiary);
+    display: inline-block;
+  }
+
+  /* CODE */
+  pre {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--color-accent-primary);
+    margin: 0;
+  }
+
+  /* THEME PAIRING demo cards */
+  .pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-6); }
+  .pair-card {
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    min-height: 280px;
+  }
+  .pair-mexi { background: var(--color-bg-tertiary); border: 1px solid var(--color-border-subtle); }
+  .pair-meximalist { background: #f5f5f5; color: #0a0a0a; }
+  .pair-meximalist .pair-eyebrow { color: var(--color-accent-primary); }
+  .pair-meximalist .pair-body { color: #525252; }
+  .pair-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; color: var(--color-accent-primary); }
+  .pair-h { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-3xl); margin: var(--space-4) 0 var(--space-2); letter-spacing: var(--ls-tight); }
+  .pair-mexi .pair-h { text-transform: lowercase; }
+  .pair-body { font-size: var(--fs-sm); margin: 0 0 var(--space-6); color: var(--color-text-secondary); }
+  .pair-meximalist .btn-primary { background: #0a0a0a; color: #f5f5f5; }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <h1>Component Sheet</h1>
+  <p class="subtitle">Primitives rendered with shared tokens — Mauricio Cruz Brand System v1.0</p>
+
+  <section class="section">
+    <h2 class="section-header">Cards</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="row" style="margin-bottom: var(--space-2)"><span class="badge badge-live">EN VIVO</span></div>
+        <h3 class="card-title">Vibecodeando Ando</h3>
+        <p class="card-description">Livestream diario lun–vie 12pm CDMX.</p>
+      </div>
+      <div class="card">
+        <div class="row" style="margin-bottom: var(--space-2)"><span class="badge badge-count">390+ eps</span></div>
+        <h3 class="card-title">BandaWeb3 Spaces</h3>
+        <p class="card-description">El archivo más grande de Web3 en español.</p>
+      </div>
+      <div class="card card-featured">
+        <div class="row" style="margin-bottom: var(--space-2)"><span class="badge badge-product">PRODUCTO</span></div>
+        <h3 class="card-title">EmpleadoDigital.mx</h3>
+        <p class="card-description">Tu empleado de IA que nunca descansa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-header">Buttons</h2>
+    <div class="row">
+      <button class="btn btn-primary">Agenda llamada</button>
+      <button class="btn btn-secondary">Ver más</button>
+      <button class="btn btn-ghost">Cancelar</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-header">Badges</h2>
+    <div class="row">
+      <span class="badge badge-live">EN VIVO</span>
+      <span class="badge badge-product">PRODUCTO</span>
+      <span class="badge badge-beta">BETA</span>
+      <span class="badge badge-new">2026</span>
+      <span class="badge badge-count">390+ EPS</span>
+      <span class="badge badge-podcast">PODCAST</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-header">Inputs</h2>
+    <div style="max-width: 480px;">
+      <input class="input" type="email" placeholder="m@meximalist.com">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-header">Avatars</h2>
+    <div class="row">
+      <span class="avatar"></span>
+      <span class="avatar" style="width:64px;height:64px;border-width:3px;"></span>
+      <span class="avatar" style="width:32px;height:32px;border-width:2px;"></span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-header">Code block</h2>
+    <pre>$ git push origin master
+→ Deploy automático en Vercel</pre>
+  </section>
+
+  <section class="section">
+    <h2 class="section-header">Theme pairing</h2>
+    <div class="pair-grid">
+      <div class="pair-card pair-mexi">
+        <span class="pair-eyebrow">mexi.wtf · builder</span>
+        <h3 class="pair-h">construyendo con ia desde mexico</h3>
+        <p class="pair-body">livestream diario · 390+ eps · podcast · comunidad</p>
+        <button class="btn btn-primary">conoce mas</button>
+      </div>
+      <div class="pair-card pair-meximalist">
+        <span class="pair-eyebrow">meximalist.com · operator</span>
+        <h3 class="pair-h">Mauricio Cruz</h3>
+        <p class="pair-body">Construyo agentes de IA para empresas mexicanas. EmpleadoDigital.mx, BandaWeb3, advisory selectivo.</p>
+        <button class="btn btn-primary">Agenda llamada</button>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

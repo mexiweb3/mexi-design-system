@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" width="1200" height="1100">
+  <rect width="1200" height="1100" fill="#0a0a0a"/>
+
+  <!-- Header -->
+  <text x="60" y="80" font-family="'Exo 2', sans-serif" font-weight="800" font-size="48" fill="#f5f5f5">Typography</text>
+  <text x="60" y="112" font-family="'Inter', sans-serif" font-weight="400" font-size="16" fill="#9ca3af">Exo 2 (display) + Inter (body) · two weights tell the whole story</text>
+
+  <!-- Display: Exo 2 -->
+  <text x="60" y="180" font-family="'Exo 2', sans-serif" font-weight="600" font-size="14" fill="#10b981" letter-spacing="2">&gt; DISPLAY · EXO 2</text>
+
+  <text x="60" y="240" font-family="'Exo 2', sans-serif" font-weight="800" font-size="64" fill="#f5f5f5" letter-spacing="-1">Construyendo con IA</text>
+  <text x="60" y="262" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Exo 2 · 800 · 64px / 72px · letter-spacing -1 · H1 hero</text>
+
+  <text x="60" y="320" font-family="'Exo 2', sans-serif" font-weight="800" font-size="40" fill="#f5f5f5" letter-spacing="-0.5">EmpleadoDigital.mx</text>
+  <text x="60" y="342" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Exo 2 · 800 · 40px · H2 section title</text>
+
+  <text x="60" y="392" font-family="'Exo 2', sans-serif" font-weight="600" font-size="28" fill="#f5f5f5">Vibecodeando Ando</text>
+  <text x="60" y="414" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Exo 2 · 600 · 28px · H3 card title</text>
+
+  <text x="60" y="460" font-family="'Exo 2', sans-serif" font-weight="600" font-size="20" fill="#f5f5f5">BandaWeb3 Spaces</text>
+  <text x="60" y="480" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Exo 2 · 600 · 20px · H4 inline title</text>
+
+  <!-- Body: Inter -->
+  <text x="60" y="560" font-family="'Exo 2', sans-serif" font-weight="600" font-size="14" fill="#10b981" letter-spacing="2">&gt; BODY · INTER</text>
+
+  <text x="60" y="610" font-family="'Inter', sans-serif" font-weight="500" font-size="20" fill="#f5f5f5">Tu empleado de IA que nunca descansa.</text>
+  <text x="60" y="630" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Inter · 500 · 20px · lead paragraph / hero subtitle</text>
+
+  <text x="60" y="680" font-family="'Inter', sans-serif" font-weight="400" font-size="16" fill="#f5f5f5">Mac mini + agente IA + dashboard + mantenimiento mensual.</text>
+  <text x="60" y="700" font-family="'Inter', sans-serif" font-weight="400" font-size="16" fill="#f5f5f5">Ya lo usan Chapas Burgers y Casablanca.</text>
+  <text x="60" y="720" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Inter · 400 · 16px · body default</text>
+
+  <text x="60" y="770" font-family="'Inter', sans-serif" font-weight="400" font-size="14" fill="#9ca3af">Livestream diario lun–vie 12pm CDMX. Construyendo con IA en vivo.</text>
+  <text x="60" y="790" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Inter · 400 · 14px · text-secondary</text>
+
+  <text x="60" y="830" font-family="'Inter', sans-serif" font-weight="500" font-size="11" fill="#10b981" letter-spacing="2">EN VIVO · 390+ EPS · PRODUCTO</text>
+  <text x="60" y="850" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Inter · 500 · 11px · uppercase, letter-spacing 2 · badges</text>
+
+  <!-- Mono / code -->
+  <text x="60" y="920" font-family="'Exo 2', sans-serif" font-weight="600" font-size="14" fill="#10b981" letter-spacing="2">&gt; MONO · JETBRAINS MONO</text>
+
+  <rect x="60" y="940" width="600" height="80" rx="8" fill="#111111" stroke="#1a1a1a"/>
+  <text x="76" y="976" font-family="'JetBrains Mono', 'Fira Code', monospace" font-weight="400" font-size="14" fill="#10b981">$ git push origin master</text>
+  <text x="76" y="1000" font-family="'JetBrains Mono', monospace" font-weight="400" font-size="14" fill="#9ca3af">→ Deploy automático en Vercel</text>
+
+  <!-- Pair pairing demo -->
+  <text x="700" y="180" font-family="'Exo 2', sans-serif" font-weight="600" font-size="14" fill="#6366f1" letter-spacing="2">&gt; THEME PAIRING</text>
+
+  <rect x="700" y="200" width="440" height="280" rx="12" fill="#1a1a1a" stroke="#10b981" stroke-width="2" stroke-opacity="0.25"/>
+  <text x="720" y="232" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#10b981" letter-spacing="2">MEXI.WTF · BUILDER</text>
+  <text x="720" y="276" font-family="'Exo 2', sans-serif" font-weight="800" font-size="32" fill="#f5f5f5">construyendo con ia</text>
+  <text x="720" y="310" font-family="'Exo 2', sans-serif" font-weight="800" font-size="32" fill="#f5f5f5">desde mexico</text>
+  <text x="720" y="356" font-family="'Inter', sans-serif" font-weight="400" font-size="14" fill="#9ca3af">livestream diario · 390+ eps · podcast · comunidad</text>
+  <rect x="720" y="384" width="160" height="40" rx="8" fill="#10b981"/>
+  <text x="800" y="410" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#0a0a0a" text-anchor="middle">conoce mas</text>
+
+  <rect x="700" y="500" width="440" height="280" rx="12" fill="#f5f5f5"/>
+  <text x="720" y="532" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#10b981" letter-spacing="2">MEXIMALIST.COM · OPERATOR</text>
+  <text x="720" y="576" font-family="'Exo 2', sans-serif" font-weight="800" font-size="32" fill="#0a0a0a">Mauricio Cruz</text>
+  <text x="720" y="608" font-family="'Inter', sans-serif" font-weight="500" font-size="20" fill="#525252">Operator y builder</text>
+  <text x="720" y="650" font-family="'Inter', sans-serif" font-weight="400" font-size="14" fill="#737373">Construyo agentes de IA para empresas mexicanas. EmpleadoDigital.mx,</text>
+  <text x="720" y="670" font-family="'Inter', sans-serif" font-weight="400" font-size="14" fill="#737373">BandaWeb3, advisory selectivo.</text>
+  <rect x="720" y="700" width="180" height="44" rx="6" fill="#0a0a0a"/>
+  <text x="810" y="728" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#f5f5f5" text-anchor="middle">Agenda llamada</text>
+
+  <text x="700" y="820" font-family="'Inter', sans-serif" font-size="12" fill="#525252">Same tokens, two registers. Builder leans Exo 2 + lowercase + emerald.</text>
+  <text x="700" y="840" font-family="'Inter', sans-serif" font-size="12" fill="#525252">Operator leans Inter + capitalized + neutrals + emerald accent.</text>
+
+  <!-- Footer -->
+  <text x="60" y="1060" font-family="'Inter', sans-serif" font-size="11" fill="#525252">Both fonts free on Google Fonts · weights used: Exo 2 [400, 600, 800] · Inter [400, 500, 600]</text>
+</svg>
