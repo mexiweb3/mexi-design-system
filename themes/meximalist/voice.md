@@ -41,7 +41,7 @@
 |---|---|
 | **Hero / headline** | "Mauricio Cruz" / "Operator y builder" |
 | **Hero subtitle** | "Construyo agentes de IA para empresas mexicanas." |
-| **About lede** | "Soy Mauricio Cruz, operator y builder con base en la Ciudad de México." |
+| **About lede** | "Soy Mauricio Cruz, operator y builder con base en Monterrey, MX." |
 | **Project pitch** | "EmpleadoDigital.mx — Agentes de IA para PyMEs. Clientes activos: Chapas Burgers, Casablanca." |
 | **CTA primary** | "Agenda una llamada" |
 | **CTA secondary** | "Descargar press kit" |
@@ -65,15 +65,15 @@
 ## Bio in three lengths (canonical)
 
 ### Short (X bio, 160 chars)
-> Operator y builder. Construyo agentes de IA para empresas mexicanas. EmpleadoDigital.mx, BandaWeb3. CDMX.
+> Operator y builder. Construyo agentes de IA para empresas mexicanas. EmpleadoDigital.mx, BandaWeb3. Monterrey, MX.
 
 ### Medium (1-paragraph bio for podcasts, 50-80 words)
-> Mauricio Cruz es operator y builder con base en la Ciudad de México. Construye agentes de IA para empresas mexicanas a través de EmpleadoDigital.mx, con clientes activos como Chapas Burgers y Casablanca. También opera BandaWeb3, el archivo de podcasts Web3 en español más grande de Latinoamérica, y transmite Vibecodeando Ando de lunes a viernes a las 12pm CDMX.
+> Mauricio Cruz es operator y builder con base en Monterrey, MX. Construye agentes de IA para empresas mexicanas a través de EmpleadoDigital.mx, con clientes activos como Chapas Burgers y Casablanca. También opera BandaWeb3, el archivo de podcasts Web3 en español más grande de Latinoamérica, y transmite Vibecodeando Ando de lunes a viernes a las 12pm MTY.
 
 ### Long (300+ words, for press kit and /about)
 > Mauricio Cruz es un operator y builder mexicano enfocado en hacer que la IA sea operacional para empresas en México. Es fundador de EmpleadoDigital.mx, una plataforma que despliega agentes de IA en infraestructura local (Mac mini + dashboard + mantenimiento mensual) para PyMEs como Chapas Burgers y Casablanca.
 >
-> Paralelo a su trabajo como operator, Mauricio construye en público. Opera BandaWeb3, el archivo más grande de podcasts Web3 en español con más de 390 episodios documentando la conversación cripto en Latinoamérica desde X Spaces. Cada día de lunes a viernes a las 12pm CDMX transmite Vibecodeando Ando, un livestream donde construye productos con IA en tiempo real.
+> Paralelo a su trabajo como operator, Mauricio construye en público. Opera BandaWeb3, el archivo más grande de podcasts Web3 en español con más de 390 episodios documentando la conversación cripto en Latinoamérica desde X Spaces. Cada día de lunes a viernes a las 12pm MTY transmite Vibecodeando Ando, un livestream donde construye productos con IA en tiempo real.
 >
 > Su filosofía operativa: proof of value sobre proof of concept. Antes de pitchar features, demuestra outcomes — revenue generado, horas ahorradas, deals cerrados. Es activo en la comunidad Ethereum México y en mxweb3, y publica como @meximalist en X, Instagram, TikTok, YouTube y LinkedIn.
 >

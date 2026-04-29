@@ -1,31 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <rect width="1200" height="630" fill="#f5f5f5"/>
+  <rect width="1200" height="630" fill="#f0ebe0"/>
+
+  <!-- Editorial frame -->
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#0c0a09" stroke-width="1" opacity="0.15"/>
 
   <!-- left content -->
-  <text x="80" y="80" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#10b981" letter-spacing="3">MEXIMALIST.COM</text>
+  <text x="80" y="100" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="13" fill="#1e3a8a" letter-spacing="3">MEXIMALIST.COM · MTY · MX</text>
 
-  <text x="80" y="200" font-family="'Exo 2', sans-serif" font-weight="800" font-size="84" fill="#0a0a0a" letter-spacing="-2">Mauricio Cruz</text>
-  <text x="80" y="252" font-family="'Inter', sans-serif" font-weight="500" font-size="28" fill="#525252">Operator y builder · México</text>
+  <text x="80" y="240" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="96" fill="#0c0a09" letter-spacing="-3">Mauricio Cruz</text>
+  <text x="80" y="290" font-family="'Inter', sans-serif" font-weight="500" font-size="26" fill="#525252">Operator y builder · Monterrey, MX</text>
 
-  <line x1="80" y1="300" x2="180" y2="300" stroke="#10b981" stroke-width="3"/>
+  <line x1="80" y1="320" x2="180" y2="320" stroke="#1e3a8a" stroke-width="3"/>
 
-  <text x="80" y="356" font-family="'Inter', sans-serif" font-weight="400" font-size="22" fill="#262626">Construyo agentes de IA para empresas</text>
-  <text x="80" y="386" font-family="'Inter', sans-serif" font-weight="400" font-size="22" fill="#262626">mexicanas. EmpleadoDigital.mx, BandaWeb3,</text>
-  <text x="80" y="416" font-family="'Inter', sans-serif" font-weight="400" font-size="22" fill="#262626">advisory selectivo.</text>
+  <text x="80" y="376" font-family="'Inter', sans-serif" font-weight="400" font-size="20" fill="#262626">Construyo agentes de IA para empresas</text>
+  <text x="80" y="404" font-family="'Inter', sans-serif" font-weight="400" font-size="20" fill="#262626">mexicanas. EmpleadoDigital.mx, BandaWeb3,</text>
+  <text x="80" y="432" font-family="'Inter', sans-serif" font-weight="400" font-size="20" fill="#262626">advisory selectivo. CPP.</text>
 
   <!-- contact strip -->
-  <g transform="translate(80, 490)" font-family="'Inter', sans-serif">
-    <text font-weight="600" font-size="14" fill="#0a0a0a">m@meximalist.com</text>
-    <text y="24" font-weight="400" font-size="14" fill="#737373">Ciudad de México · ES / EN</text>
+  <g transform="translate(80, 500)" font-family="'JetBrains Mono', monospace">
+    <text font-weight="600" font-size="13" fill="#0c0a09" letter-spacing="2">M@MEXIMALIST.COM</text>
+    <text y="22" font-weight="400" font-size="11" fill="#737373" letter-spacing="3">MONTERREY · MX · ES / EN</text>
   </g>
 
   <!-- right side: monogram MC -->
-  <g transform="translate(820, 180)" font-family="'Inter', sans-serif" font-weight="600">
-    <text font-size="220" fill="#0a0a0a" letter-spacing="-8">M</text>
-    <text x="148" y="60" font-size="160" fill="#10b981" letter-spacing="-4">C</text>
+  <g transform="translate(840, 200)">
+    <rect width="280" height="280" fill="#0c0a09" rx="8"/>
+    <text x="140" y="178" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="180" fill="#f0ebe0" text-anchor="middle" letter-spacing="-6">MC</text>
   </g>
 
-  <!-- footer line -->
-  <line x1="80" y1="565" x2="1120" y2="565" stroke="#e5e5e5"/>
-  <text x="80" y="600" font-family="'Inter', sans-serif" font-weight="400" font-size="13" fill="#737373">© 2026 Mauricio Cruz · Made in México · meximalist.com</text>
+  <!-- footer -->
+  <text x="80" y="600" font-family="'JetBrains Mono', monospace" font-weight="400" font-size="11" fill="#737373" letter-spacing="3">© 2026 MAURICIO CRUZ · MADE IN MTY · MX</text>
 </svg>

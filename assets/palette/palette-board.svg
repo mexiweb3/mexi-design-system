@@ -1,96 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" font-family="'Inter', system-ui, sans-serif">
-  <rect width="1200" height="900" fill="#0a0a0a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1080" width="1200" height="1080" font-family="'Inter', sans-serif">
+  <rect width="1200" height="1080" fill="#1c1f23"/>
 
-  <text x="60" y="80" font-family="'Exo 2', sans-serif" font-weight="800" font-size="48" fill="#f5f5f5">Color System</text>
-  <text x="60" y="112" font-weight="400" font-size="16" fill="#9ca3af">Mauricio Cruz Brand System · Shared tokens + theme overrides</text>
+  <!-- Header -->
+  <text x="60" y="80" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="56" fill="#f0ebe0" letter-spacing="-2">Color System v2</text>
+  <text x="60" y="112" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d97706" letter-spacing="3">NORTE INDUSTRIAL · EDITORIAL · MTY</text>
 
   <!-- BACKGROUND -->
-  <text x="60" y="180" font-family="'Exo 2', sans-serif" font-weight="600" font-size="14" fill="#10b981" letter-spacing="2">&gt; BACKGROUND</text>
+  <text x="60" y="180" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="11" fill="#d97706" letter-spacing="3">&gt; BACKGROUND</text>
   <g transform="translate(60, 200)">
-    <rect width="180" height="120" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1"/>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#f5f5f5">mexi-black</text>
-    <text x="16" y="116" font-size="11" fill="#9ca3af">#0a0a0a</text>
+    <rect width="220" height="120" fill="#1c1f23" stroke="#3a3d42" stroke-width="1"/>
+    <text x="16" y="100" font-size="13" font-weight="600" fill="#f0ebe0">steel</text>
+    <text x="16" y="116" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a8a39a">#1c1f23</text>
   </g>
-  <g transform="translate(252, 200)">
-    <rect width="180" height="120" fill="#111111"/>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#f5f5f5">mexi-dark</text>
-    <text x="16" y="116" font-size="11" fill="#9ca3af">#111111</text>
+  <g transform="translate(292, 200)">
+    <rect width="220" height="120" fill="#2a2d33"/>
+    <text x="16" y="100" font-size="13" font-weight="600" fill="#f0ebe0">concrete</text>
+    <text x="16" y="116" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a8a39a">#2a2d33</text>
   </g>
-  <g transform="translate(444, 200)">
-    <rect width="180" height="120" fill="#1a1a1a"/>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#f5f5f5">mexi-gray</text>
-    <text x="16" y="116" font-size="11" fill="#9ca3af">#1a1a1a</text>
+  <g transform="translate(524, 200)">
+    <rect width="220" height="120" fill="#3a3d42"/>
+    <text x="16" y="100" font-size="13" font-weight="600" fill="#f0ebe0">graphite</text>
+    <text x="16" y="116" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a8a39a">#3a3d42</text>
   </g>
-  <g transform="translate(636, 200)">
-    <rect width="180" height="120" fill="#f5f5f5"/>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#0a0a0a">cream (light mode)</text>
-    <text x="16" y="116" font-size="11" fill="#525252">#f5f5f5</text>
+  <g transform="translate(756, 200)">
+    <rect width="220" height="120" fill="#f0ebe0"/>
+    <text x="16" y="100" font-size="13" font-weight="600" fill="#0c0a09">bone (cream)</text>
+    <text x="16" y="116" font-family="'JetBrains Mono', monospace" font-size="11" fill="#525252">#f0ebe0</text>
   </g>
 
   <!-- ACCENTS -->
-  <text x="60" y="380" font-family="'Exo 2', sans-serif" font-weight="600" font-size="14" fill="#10b981" letter-spacing="2">&gt; ACCENTS</text>
+  <text x="60" y="380" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="11" fill="#d97706" letter-spacing="3">&gt; ACCENTS</text>
   <g transform="translate(60, 400)">
-    <rect width="180" height="120" fill="#10b981"/>
-    <text x="16" y="32" font-size="11" fill="#0a0a0a" font-weight="600">PRIMARY</text>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#0a0a0a">emerald</text>
-    <text x="16" y="116" font-size="11" fill="#0a0a0a" opacity="0.7">#10b981</text>
+    <rect width="270" height="140" fill="#d97706"/>
+    <text x="20" y="38" font-family="'JetBrains Mono', monospace" font-size="11" fill="#0c0a09" font-weight="600" letter-spacing="3">INDUSTRIAL</text>
+    <text x="20" y="100" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="22" fill="#0c0a09">amber</text>
+    <text x="20" y="120" font-family="'JetBrains Mono', monospace" font-size="11" fill="#0c0a09" opacity="0.7">#d97706</text>
   </g>
-  <g transform="translate(252, 400)">
-    <rect width="180" height="120" fill="#6366f1"/>
-    <text x="16" y="32" font-size="11" fill="#f5f5f5" font-weight="600">SECONDARY</text>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#f5f5f5">indigo</text>
-    <text x="16" y="116" font-size="11" fill="#f5f5f5" opacity="0.7">#6366f1</text>
+  <g transform="translate(342, 400)">
+    <rect width="270" height="140" fill="#1e3a8a"/>
+    <text x="20" y="38" font-family="'JetBrains Mono', monospace" font-size="11" fill="#f0ebe0" font-weight="600" letter-spacing="3">EDITORIAL · MEXIMALIST</text>
+    <text x="20" y="100" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="22" fill="#f0ebe0">noche</text>
+    <text x="20" y="120" font-family="'JetBrains Mono', monospace" font-size="11" fill="#f0ebe0" opacity="0.7">#1e3a8a</text>
   </g>
-  <g transform="translate(444, 400)">
-    <rect width="180" height="120" fill="#f59e0b"/>
-    <text x="16" y="32" font-size="11" fill="#0a0a0a" font-weight="600">ALERT</text>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#0a0a0a">amber</text>
-    <text x="16" y="116" font-size="11" fill="#0a0a0a" opacity="0.7">#f59e0b</text>
+  <g transform="translate(624, 400)">
+    <rect width="270" height="140" fill="#84cc16"/>
+    <text x="20" y="38" font-family="'JetBrains Mono', monospace" font-size="11" fill="#0c0a09" font-weight="600" letter-spacing="3">BUILDER · MEXI.WTF</text>
+    <text x="20" y="100" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="22" fill="#0c0a09">toxic</text>
+    <text x="20" y="120" font-family="'JetBrains Mono', monospace" font-size="11" fill="#0c0a09" opacity="0.7">#84cc16</text>
   </g>
-  <g transform="translate(636, 400)">
-    <rect width="180" height="120" fill="#ef4444"/>
-    <text x="16" y="32" font-size="11" fill="#f5f5f5" font-weight="600">DESTRUCTIVE</text>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#f5f5f5">red</text>
-    <text x="16" y="116" font-size="11" fill="#f5f5f5" opacity="0.7">#ef4444</text>
-  </g>
-  <g transform="translate(828, 400)">
-    <rect width="180" height="120" fill="#34d399"/>
-    <text x="16" y="32" font-size="11" fill="#0a0a0a" font-weight="600">PRIMARY HOVER</text>
-    <text x="16" y="100" font-size="13" font-weight="600" fill="#0a0a0a">emerald-light</text>
-    <text x="16" y="116" font-size="11" fill="#0a0a0a" opacity="0.7">#34d399</text>
+  <g transform="translate(906, 400)">
+    <rect width="234" height="140" fill="#7c2d12"/>
+    <text x="20" y="38" font-family="'JetBrains Mono', monospace" font-size="11" fill="#f0ebe0" font-weight="600" letter-spacing="3">DETAIL</text>
+    <text x="20" y="100" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="22" fill="#f0ebe0">rust</text>
+    <text x="20" y="120" font-family="'JetBrains Mono', monospace" font-size="11" fill="#f0ebe0" opacity="0.7">#7c2d12</text>
   </g>
 
   <!-- TEXT -->
-  <text x="60" y="580" font-family="'Exo 2', sans-serif" font-weight="600" font-size="14" fill="#10b981" letter-spacing="2">&gt; TEXT</text>
-  <g transform="translate(60, 600)">
-    <rect width="180" height="120" fill="#1a1a1a"/>
-    <text x="16" y="40" font-size="14" font-weight="600" fill="#f5f5f5">Primary text Aa</text>
-    <text x="16" y="100" font-size="11" fill="#9ca3af">#f5f5f5 / text-100</text>
+  <text x="60" y="600" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="11" fill="#d97706" letter-spacing="3">&gt; TEXT ON STEEL</text>
+  <g transform="translate(60, 620)">
+    <rect width="270" height="120" fill="#2a2d33"/>
+    <text x="20" y="42" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="20" fill="#f0ebe0">Primary text Aa</text>
+    <text x="20" y="100" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a8a39a">#f0ebe0 / bone</text>
   </g>
-  <g transform="translate(252, 600)">
-    <rect width="180" height="120" fill="#1a1a1a"/>
-    <text x="16" y="40" font-size="14" font-weight="500" fill="#9ca3af">Secondary Aa</text>
-    <text x="16" y="100" font-size="11" fill="#9ca3af">#9ca3af / text-400</text>
+  <g transform="translate(342, 620)">
+    <rect width="270" height="120" fill="#2a2d33"/>
+    <text x="20" y="42" font-size="16" font-weight="500" fill="#a8a39a">Secondary Aa</text>
+    <text x="20" y="100" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a8a39a">#a8a39a / stone</text>
   </g>
-  <g transform="translate(444, 600)">
-    <rect width="180" height="120" fill="#1a1a1a"/>
-    <text x="16" y="40" font-size="14" font-weight="400" fill="#6b7280">Tertiary Aa</text>
-    <text x="16" y="100" font-size="11" fill="#9ca3af">#6b7280 / text-500</text>
+  <g transform="translate(624, 620)">
+    <rect width="270" height="120" fill="#2a2d33"/>
+    <text x="20" y="42" font-size="16" font-weight="400" fill="#6b6660">Tertiary Aa</text>
+    <text x="20" y="100" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a8a39a">#6b6660 / stone-dark</text>
   </g>
-  <g transform="translate(636, 600)">
-    <rect width="180" height="120" fill="#1a1a1a"/>
-    <text x="16" y="40" font-size="14" font-weight="400" fill="#525252">Disabled Aa</text>
-    <text x="16" y="100" font-size="11" fill="#9ca3af">#525252 / text-600</text>
+  <g transform="translate(906, 620)">
+    <rect width="234" height="120" fill="#2a2d33"/>
+    <text x="20" y="42" font-size="16" font-weight="400" fill="#4a4641">Disabled Aa</text>
+    <text x="20" y="100" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a8a39a">#4a4641</text>
   </g>
 
-  <!-- THEME ACCENTS -->
-  <text x="60" y="780" font-family="'Exo 2', sans-serif" font-weight="600" font-size="14" fill="#6366f1" letter-spacing="2">&gt; THEME OVERRIDES</text>
-  <g transform="translate(60, 800)">
-    <rect width="372" height="60" fill="#10b981"/>
-    <text x="16" y="36" font-size="14" font-weight="600" fill="#0a0a0a">mexi.wtf · accent (full saturation)</text>
+  <!-- CONTRAST -->
+  <text x="60" y="800" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="11" fill="#d97706" letter-spacing="3">&gt; CONTRAST RATIOS · WCAG</text>
+
+  <g transform="translate(60, 820)">
+    <rect width="540" height="100" fill="#1c1f23" stroke="#3a3d42"/>
+    <text x="20" y="36" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="20" fill="#f0ebe0">bone on steel — AAA</text>
+    <text x="20" y="60" font-size="13" fill="#a8a39a">Body text default. 13.5:1 ratio.</text>
+    <text x="20" y="86" font-family="'JetBrains Mono', monospace" font-size="11" fill="#d97706">#f0ebe0 ON #1c1f23 = 13.50:1</text>
   </g>
-  <g transform="translate(444, 800)">
-    <rect width="372" height="60" fill="#1a1a1a" stroke="#10b981" stroke-width="1"/>
-    <text x="16" y="36" font-size="14" font-weight="600" fill="#10b981">meximalist.com · accent (restrained, on dark)</text>
+  <g transform="translate(612, 820)">
+    <rect width="528" height="100" fill="#d97706"/>
+    <text x="20" y="36" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="20" fill="#0c0a09">ink on amber — AAA</text>
+    <text x="20" y="60" font-size="13" fill="#0c0a09" opacity="0.85">Buttons, CTAs, hi-vis labels.</text>
+    <text x="20" y="86" font-family="'JetBrains Mono', monospace" font-size="11" fill="#0c0a09" opacity="0.7">#0c0a09 ON #d97706 = 6.85:1</text>
+  </g>
+
+  <!-- THEME ASSIGNMENT -->
+  <text x="60" y="980" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="11" fill="#d97706" letter-spacing="3">&gt; PER-SURFACE ACCENT</text>
+  <g transform="translate(60, 1000)">
+    <rect width="540" height="50" fill="#1e3a8a"/>
+    <text x="20" y="32" font-family="'Fraunces 144pt', serif" font-style="italic" font-weight="600" font-size="16" fill="#f0ebe0">meximalist.com → noche (#1e3a8a)</text>
+  </g>
+  <g transform="translate(612, 1000)">
+    <rect width="528" height="50" fill="#84cc16"/>
+    <text x="20" y="32" font-family="'JetBrains Mono', monospace" font-size="14" fill="#0c0a09" font-weight="700">mexi.wtf → toxic (#84cc16)</text>
   </g>
 </svg>

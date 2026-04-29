@@ -6,7 +6,7 @@
 
 ## Core principles
 
-1. **lowercase as default** — except brand names (BandaWeb3, EmpleadoDigital), proper nouns when ambiguity matters, badges (LIVE, BETA), and abbreviations (IA, CDMX, CEO).
+1. **lowercase as default** — except brand names (BandaWeb3, EmpleadoDigital), proper nouns when ambiguity matters, badges (LIVE, BETA), and abbreviations (IA, MTY, CEO).
 2. **Acentos opcionales** — both "construyendo con ia desde mexico" and "construyendo con IA desde México" are valid. Pick one and stay consistent within a single page.
 3. **Direct over polite.** Skip "estamos emocionados de anunciar". Just say what it is.
 4. **Builder energy** — "vamos a romperla", "ya esta listo", "lo subi anoche".
@@ -38,7 +38,7 @@
 |---|---|
 | **Hero / tagline** | "construyendo con ia desde mexico" |
 | **Project pitch** | "tu empleado de ia que nunca descansa" |
-| **Live show CTA** | "lun-vie 12pm cdmx · construyendo con ia en vivo" |
+| **Live show CTA** | "lun-vie 12pm mty · construyendo con ia en vivo" |
 | **Section header** | "> contenido", "> comunidad", "> conecta" |
 | **Empty state** | "todavia nada por aqui. vuelve manana." |
 | **Error** | "algo trono. intenta de nuevo." |
@@ -88,7 +88,7 @@ When translating to English on `/en/`:
 - Hero subtitle: `construyendo con ia desde mexico`
 - Featured product: `tu empleado de ia que nunca descansa`
 - Featured supporting: `mac mini + agente ia + dashboard + mantenimiento mensual. ya lo usan chapas burgers y casablanca.`
-- Live card: `livestream diario lun-vie 12pm cdmx. construyendo con ia en vivo.`
+- Live card: `livestream diario lun-vie 12pm mty. construyendo con ia en vivo.`
 - Podcast card: `el archivo mas grande de web3 en espanol. x spaces.`
 - Community card: `impulsando ethereum en mexico`
 - Footer: `construyendo desde mexico` · `hecho con claude code`
