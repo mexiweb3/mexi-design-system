@@ -3,122 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mauricio Cruz · Operator y builder · Monterrey, MX</title>
-<meta name="description" content="Construyo agentes de IA para empresas mexicanas. EmpleadoDigital.mx, BandaWeb3, advisory selectivo. Monterrey, México.">
+<title>Mauricio Cruz · Operator y builder · México</title>
+<meta name="description" content="Construyo agentes de IA para empresas mexicanas. EmpleadoDigital.mx, BandaWeb3, advisory selectivo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,144,500;1,144,600;1,144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../tokens/tokens.css">
 <style>
 * { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--color-bg-steel);
-  color: var(--color-text-primary);
-  font-family: var(--font-body);
-  line-height: 1.5;
-}
+body { margin: 0; background: var(--color-bg-primary); color: var(--color-text-primary); font-family: var(--font-body); line-height: 1.5; min-height: 100vh; }
 a { color: var(--color-text-primary); text-decoration: none; transition: color 200ms; }
-a:hover { color: var(--color-noche); }
+a:hover { color: var(--color-accent-primary); }
 
 /* NAV */
-.nav { position: sticky; top: 0; z-index: 50; background: rgba(28, 31, 35, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border-subtle); }
-.nav-inner { max-width: 64rem; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-.nav-brand { display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-editorial); font-style: italic; font-weight: 600; font-size: 1.125rem; }
-.nav-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
-.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--color-text-secondary); font-family: var(--font-mono); letter-spacing: 0.05em; }
+.nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(20px); background: rgba(10,10,10,0.8); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.nav-inner { max-width: 64rem; margin: 0 auto; padding: var(--space-4) var(--space-8); display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-body); font-weight: 600; font-size: var(--fs-base); }
+.nav-monogram { width: 28px; height: 28px; border-radius: 6px; background: var(--color-accent-primary); color: #000; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 700; font-size: 13px; }
+.nav-links { display: flex; gap: var(--space-6); font-size: var(--fs-sm); color: var(--color-text-secondary); }
 .nav-links a:hover { color: var(--color-text-primary); }
-.nav-cta { padding: 0.5rem 1rem; background: var(--color-noche); color: var(--color-text-primary); border-radius: 6px; font-weight: 600; font-size: 0.8125rem; font-family: var(--font-body); }
-.nav-cta:hover { background: var(--color-noche-hover); color: var(--color-text-primary); }
+.nav-cta { padding: var(--space-2) var(--space-4); background: var(--color-accent-primary); color: #000; border-radius: var(--radius-md); font-weight: 600; font-size: var(--fs-sm); }
+.nav-cta:hover { background: var(--color-accent-primary-hover); color: #000; transform: translateY(-1px); }
 
-.wrap { max-width: 64rem; margin: 0 auto; padding: 4rem 2rem; }
+/* WRAP */
+.wrap { max-width: 64rem; margin: 0 auto; padding: var(--space-12) var(--space-8); }
 
 /* HERO */
-.hero { display: grid; grid-template-columns: 360px 1fr; gap: 4rem; margin-bottom: 6rem; align-items: center; }
-@media (max-width: 800px) { .hero { grid-template-columns: 1fr; gap: 2rem; text-align: center; } }
-.headshot { width: 360px; aspect-ratio: 4/5; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.5); position: relative; }
-.headshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.headshot-frame { position: absolute; inset: 12px; border: 1px solid rgba(240,235,224,0.15); pointer-events: none; }
-@media (max-width: 800px) { .headshot { width: 280px; margin: 0 auto; } }
-.hero-eyebrow { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-amber); margin-bottom: 1rem; }
-.hero h1 { font-family: var(--font-editorial); font-style: italic; font-weight: 600; font-size: clamp(3rem, 6vw, 5.5rem); margin: 0 0 0.5rem; letter-spacing: -0.04em; line-height: 1; color: var(--color-text-primary); }
-.hero .role { font-family: var(--font-body); color: var(--color-text-primary); font-size: 1.5rem; font-weight: 500; margin: 0 0 0.5rem; }
-.hero .accent-line { width: 80px; height: 3px; background: var(--color-noche); margin: 1.5rem 0; }
-@media (max-width: 800px) { .hero .accent-line { margin: 1.5rem auto; } }
-.hero p { color: var(--color-text-secondary); font-size: 1.0625rem; max-width: 520px; margin: 0 0 2rem; line-height: 1.6; }
-.hero-cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-@media (max-width: 800px) { .hero-cta-row { justify-content: center; } }
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0 1.5rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: all 200ms; cursor: pointer; font-family: var(--font-body); }
-.btn-primary { background: var(--color-noche); color: var(--color-text-primary); }
-.btn-primary:hover { background: var(--color-noche-hover); color: var(--color-text-primary); transform: translateY(-1px); box-shadow: var(--shadow-noche-hover); }
-.btn-secondary { border: 1px solid var(--color-border-default); color: var(--color-text-primary); }
-.btn-secondary:hover { border-color: var(--color-noche); color: var(--color-noche); }
+.hero { display: grid; grid-template-columns: 320px 1fr; gap: var(--space-12); margin-bottom: var(--space-24); align-items: center; }
+@media (max-width: 800px) { .hero { grid-template-columns: 1fr; gap: var(--space-8); text-align: center; } }
+.headshot { width: 320px; height: 380px; border-radius: var(--radius-2xl); position: relative; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.4); background: linear-gradient(135deg, #1a1a1a 0%, #262626 100%); }
+.headshot img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+.headshot::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4)); pointer-events: none; }
+@media (max-width: 800px) { .headshot { width: 240px; height: 280px; margin: 0 auto; } }
 
-/* meta strip */
-.meta-strip { display: flex; gap: 2rem; padding: 1.25rem 2rem; background: var(--color-bg-concrete); border-radius: 8px; font-family: var(--font-mono); font-size: 0.8125rem; flex-wrap: wrap; margin-bottom: 6rem; }
-.meta-strip .item { display: flex; gap: 0.5rem; }
-.meta-strip .label { color: var(--color-text-tertiary); }
-.meta-strip .value { color: var(--color-amber); font-weight: 600; }
+/* Avatar in nav (small) */
+.nav-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+
+/* About avatar block */
+.about-photo { width: 100%; max-width: 340px; aspect-ratio: 4/5; border-radius: var(--radius-xl); overflow: hidden; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(0); }
+.hero-eyebrow { color: var(--color-accent-primary); font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; margin-bottom: var(--space-3); }
+.hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.5rem, 5vw, 4rem); margin: 0 0 var(--space-2); letter-spacing: var(--ls-tighter); line-height: 1.05; }
+.hero .role { color: var(--color-text-secondary); font-size: var(--fs-xl); font-weight: 500; margin: 0 0 var(--space-4); }
+.hero .accent-line { width: 60px; height: 3px; background: var(--color-accent-primary); margin: var(--space-4) 0; }
+@media (max-width: 800px) { .hero .accent-line { margin: var(--space-4) auto; } }
+.hero p { color: var(--color-text-secondary); font-size: var(--fs-lg); max-width: 520px; margin: 0 0 var(--space-6); }
+.hero-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+@media (max-width: 800px) { .hero-cta-row { justify-content: center; } }
+.btn { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; padding: 0 var(--space-6); border-radius: var(--radius-md); font-weight: 600; font-size: var(--fs-sm); transition: all 200ms; cursor: pointer; }
+.btn-primary { background: var(--color-accent-primary); color: #000; }
+.btn-primary:hover { background: var(--color-accent-primary-hover); color: #000; transform: translateY(-1px); box-shadow: var(--shadow-button-hover); }
+.btn-secondary { border: 1px solid rgba(255,255,255,0.15); color: var(--color-text-primary); }
+.btn-secondary:hover { border-color: var(--color-accent-primary); color: var(--color-accent-primary); }
 
 /* SECTION */
-.section { margin-bottom: 6rem; }
-.section-eyebrow { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-amber); margin-bottom: 0.75rem; }
-.section h2 { font-family: var(--font-editorial); font-style: italic; font-weight: 600; font-size: 2.5rem; margin: 0 0 0.5rem; letter-spacing: -0.03em; color: var(--color-text-primary); }
-.section h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--color-noche); margin-top: 1rem; }
-.section-lede { color: var(--color-text-secondary); font-size: 1.0625rem; max-width: 600px; margin: 0 0 2.5rem; line-height: 1.6; }
+.section { margin-bottom: var(--space-24); }
+.section-eyebrow { color: var(--color-accent-primary); font-size: var(--fs-xs); font-weight: 600; letter-spacing: var(--ls-widest); text-transform: uppercase; margin-bottom: var(--space-3); }
+.section h2 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-3xl); margin: 0 0 var(--space-2); letter-spacing: var(--ls-tight); }
+.section h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--color-accent-primary); margin-top: var(--space-3); }
+.section-lede { color: var(--color-text-secondary); font-size: var(--fs-lg); max-width: 600px; margin: 0 0 var(--space-10); }
 
-/* CASES */
-.cases { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+/* CASES (work) */
+.cases { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
 @media (max-width: 700px) { .cases { grid-template-columns: 1fr; } }
-.case { padding: 2rem; background: var(--color-bg-concrete); border-radius: 8px; border: 1px solid var(--color-border-subtle); transition: border-color 200ms, transform 200ms; }
-.case:hover { border-color: var(--color-noche); transform: translateY(-1px); }
-.case-meta { font-family: var(--font-mono); display: flex; gap: 0.75rem; font-size: 0.7rem; color: var(--color-text-tertiary); margin-bottom: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
-.case-meta .dot { color: var(--color-amber); }
-.case h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.375rem; margin: 0 0 0.5rem; letter-spacing: -0.015em; }
-.case p { color: var(--color-text-secondary); font-size: 0.9375rem; margin: 0 0 1rem; line-height: 1.6; }
-.case .stat { font-family: var(--font-mono); color: var(--color-amber); font-size: 0.8125rem; font-weight: 600; }
+.case { padding: var(--space-8); background: var(--color-bg-tertiary); border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.05); transition: border-color 200ms, transform 200ms; }
+.case:hover { border-color: var(--color-border-accent); transform: translateY(-2px); }
+.case-meta { display: flex; gap: var(--space-3); font-size: var(--fs-xs); color: var(--color-text-tertiary); margin-bottom: var(--space-3); letter-spacing: var(--ls-wide); text-transform: uppercase; font-weight: 600; }
+.case-meta .dot { color: var(--color-accent-primary); }
+.case h3 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-xl); margin: 0 0 var(--space-2); }
+.case p { color: var(--color-text-secondary); font-size: var(--fs-sm); margin: 0 0 var(--space-4); }
+.case .stat { font-family: var(--font-mono); color: var(--color-accent-primary); font-size: var(--fs-sm); font-weight: 500; }
 
-/* BUILDING */
-.building-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+/* BUILDING (current projects) */
+.building-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
 @media (max-width: 800px) { .building-grid { grid-template-columns: 1fr; } }
-.build-card { padding: 1.5rem; background: var(--color-bg-concrete); border-radius: 8px; border: 1px solid var(--color-border-subtle); transition: all 200ms; }
-.build-card:hover { border-color: var(--color-amber); }
-.build-card .label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-amber); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.5rem; }
-.build-card h4 { font-family: var(--font-body); font-weight: 600; font-size: 1rem; margin: 0 0 0.25rem; letter-spacing: -0.01em; }
-.build-card p { color: var(--color-text-secondary); font-size: 0.875rem; margin: 0; line-height: 1.5; }
+.build-card { padding: var(--space-5); background: var(--color-bg-tertiary); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05); transition: all 200ms; }
+.build-card:hover { border-color: var(--color-border-accent); }
+.build-card .label { font-size: var(--fs-xs); color: var(--color-text-tertiary); letter-spacing: var(--ls-wide); text-transform: uppercase; font-weight: 600; margin-bottom: var(--space-2); }
+.build-card h4 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-base); margin: 0 0 var(--space-1); }
+.build-card p { color: var(--color-text-secondary); font-size: var(--fs-sm); margin: 0; }
 
 /* BIO */
-.bio-section { display: grid; grid-template-columns: 340px 1fr; gap: 4rem; align-items: start; margin-top: 2rem; }
-@media (max-width: 800px) { .bio-section { grid-template-columns: 1fr; } }
-.bio-photo { width: 100%; max-width: 340px; aspect-ratio: 4/5; border-radius: 8px; overflow: hidden; }
-.bio-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.bio-text p { color: var(--color-text-secondary); font-size: 1rem; margin: 0 0 0.875rem; max-width: 600px; line-height: 1.7; }
-.bio-text p:last-child { margin-bottom: 0; }
-.bio-text strong { color: var(--color-text-primary); font-weight: 500; }
-.bio-text a { color: var(--color-noche); border-bottom: 1px solid var(--color-noche-muted); }
-.bio-text a:hover { color: var(--color-noche-hover); border-bottom-color: var(--color-noche); }
+.bio-block { display: grid; grid-template-columns: 200px 1fr; gap: var(--space-12); align-items: start; }
+@media (max-width: 800px) { .bio-block { grid-template-columns: 1fr; gap: var(--space-4); } }
+.bio-block .label { color: var(--color-text-tertiary); font-size: var(--fs-xs); letter-spacing: var(--ls-widest); text-transform: uppercase; font-weight: 600; }
+.bio-block p { color: var(--color-text-secondary); font-size: var(--fs-base); margin: 0 0 var(--space-3); max-width: 640px; }
+.bio-block p:last-child { margin-bottom: 0; }
+.bio-block strong { color: var(--color-text-primary); font-weight: 500; }
 
 /* CONTACT */
-.contact { padding: 3rem; background: var(--color-bg-concrete); border-radius: 12px; border: 1px solid var(--color-border-subtle); display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: center; }
-@media (max-width: 800px) { .contact { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; } }
-.contact h2 { font-family: var(--font-editorial); font-style: italic; font-weight: 600; font-size: 2.25rem; margin: 0 0 0.75rem; letter-spacing: -0.03em; }
-.contact h2::after { display: none; }
-.contact p { color: var(--color-text-secondary); font-size: 1rem; margin: 0 0 1.5rem; line-height: 1.6; }
-.contact-info { font-family: var(--font-mono); font-size: 0.875rem; }
-.contact-info .row { display: grid; grid-template-columns: 80px 1fr; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border-subtle); }
-.contact-info .row:last-child { border-bottom: 0; }
-.contact-info .label { color: var(--color-text-tertiary); }
-.contact-info a { color: var(--color-amber); }
+.contact { padding: var(--space-12); background: var(--color-bg-tertiary); border-radius: var(--radius-2xl); border: 1px solid rgba(255,255,255,0.05); display: grid; grid-template-columns: 1fr 320px; gap: var(--space-12); align-items: center; }
+@media (max-width: 800px) { .contact { grid-template-columns: 1fr; padding: var(--space-8); } }
+.contact h2 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-3xl); margin: 0 0 var(--space-3); letter-spacing: var(--ls-tight); }
+.contact p { color: var(--color-text-secondary); font-size: var(--fs-base); margin: 0 0 var(--space-6); }
+.contact-info { font-family: var(--font-mono); font-size: var(--fs-sm); }
+.contact-info .row { display: flex; gap: var(--space-3); margin-bottom: var(--space-2); }
+.contact-info .label { color: var(--color-text-tertiary); width: 60px; }
+.contact-info a { color: var(--color-accent-primary); }
 
 /* FOOTER */
-footer { border-top: 1px solid var(--color-border-subtle); padding: 2rem 0; margin-top: 4rem; }
-.foot-inner { max-width: 64rem; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--color-text-tertiary); font-size: 0.8125rem; font-family: var(--font-mono); }
+footer { border-top: 1px solid rgba(255,255,255,0.05); padding: var(--space-8) 0; margin-top: var(--space-16); }
+.foot-inner { max-width: 64rem; margin: 0 auto; padding: 0 var(--space-8); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); color: var(--color-text-tertiary); font-size: var(--fs-xs); }
 .foot-inner a { color: var(--color-text-tertiary); }
-.foot-inner a:hover { color: var(--color-noche); }
+.foot-inner a:hover { color: var(--color-accent-primary); }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="nav-brand">
@@ -141,57 +133,47 @@ footer { border-top: 1px solid var(--color-border-subtle); padding: 2rem 0; marg
   <header class="hero">
     <div class="headshot">
       <img src="../assets/photos/headshot-bw-shirt-dots.jpg" alt="Mauricio Cruz · headshot">
-      <div class="headshot-frame"></div>
     </div>
     <div>
-      <div class="hero-eyebrow">OPERATOR · BUILDER · MTY · MX</div>
+      <div class="hero-eyebrow">Operator y builder · CDMX</div>
       <h1>Mauricio Cruz</h1>
       <p class="role">Construyo agentes de IA para empresas mexicanas.</p>
       <div class="accent-line"></div>
-      <p>Operator de EmpleadoDigital.mx (Chapas Burgers, Casablanca) y builder en público de BandaWeb3, Vibecodeando Ando y Proof of Value. CPP. Spanish-first. Monterrey.</p>
+      <p>Operator de EmpleadoDigital.mx (Chapas Burgers, Casablanca) y builder en público de BandaWeb3, Vibecodeando Ando y Proof of Value. Spanish-first. México.</p>
       <div class="hero-cta-row">
         <a href="#contact" class="btn btn-primary">Agenda una llamada →</a>
-        <a href="#work" class="btn btn-secondary">Ver casos</a>
+        <a href="#work" class="btn btn-secondary">Ver casos de estudio</a>
       </div>
     </div>
   </header>
 
-  <!-- meta strip -->
-  <div class="meta-strip">
-    <div class="item"><span class="label">EST</span><span class="value">2024</span></div>
-    <div class="item"><span class="label">CLIENTES</span><span class="value">CHAPAS BURGERS · CASABLANCA</span></div>
-    <div class="item"><span class="label">EPS PODCAST</span><span class="value">390+</span></div>
-    <div class="item"><span class="label">UPTIME LIVESTREAM</span><span class="value">L–V 12PM</span></div>
-    <div class="item"><span class="label">BASE</span><span class="value">MTY · MX</span></div>
-  </div>
-
   <!-- WORK -->
   <section class="section" id="work">
-    <div class="section-eyebrow">SELECTED WORK · 2025–2026</div>
+    <div class="section-eyebrow">Selected work</div>
     <h2>Casos de estudio</h2>
     <p class="section-lede">Implementaciones reales con resultados medibles. Foco en PyMEs mexicanas, retail y servicios.</p>
 
     <div class="cases">
       <div class="case">
-        <div class="case-meta"><span>EMPLEADODIGITAL.MX</span><span class="dot">·</span><span>2025–ACTIVO</span></div>
+        <div class="case-meta">EmpleadoDigital.mx <span class="dot">·</span> 2025–activo</div>
         <h3>Chapas Burgers</h3>
         <p>Agente de IA para gestión de pedidos y reservas vía WhatsApp. Mac mini local + dashboard + mantenimiento mensual.</p>
-        <div class="stat">15+ HRS/SEMANA AHORRADAS · ROI EN 60 DÍAS</div>
+        <div class="stat">15+ horas/semana ahorradas en operación</div>
       </div>
       <div class="case">
-        <div class="case-meta"><span>EMPLEADODIGITAL.MX</span><span class="dot">·</span><span>2025–ACTIVO</span></div>
+        <div class="case-meta">EmpleadoDigital.mx <span class="dot">·</span> 2025–activo</div>
         <h3>Casablanca</h3>
         <p>Agente conversacional para clientes, integrado con sistema de inventario. Despliegue local, sin dependencia de cloud.</p>
-        <div class="stat">RESPUESTA &lt; 30S · 24/7 · ON-PREM</div>
+        <div class="stat">Respuesta &lt; 30s · 24/7</div>
       </div>
     </div>
   </section>
 
   <!-- BUILDING -->
   <section class="section" id="building">
-    <div class="section-eyebrow">CURRENTLY SHIPPING</div>
+    <div class="section-eyebrow">Currently shipping</div>
     <h2>Building in public</h2>
-    <p class="section-lede">Procesos abiertos, decisiones documentadas. Lunes a viernes, en vivo desde Monterrey.</p>
+    <p class="section-lede">Procesos abiertos, decisiones documentadas. Cada día de lunes a viernes, en vivo.</p>
 
     <div class="building-grid">
       <a href="https://bw3.mexi.wtf" class="build-card">
@@ -202,7 +184,7 @@ footer { border-top: 1px solid var(--color-border-subtle); padding: 2rem 0; marg
       <a href="https://vibecodeando.mexi.wtf" class="build-card">
         <div class="label">LIVESTREAM · DIARIO</div>
         <h4>Vibecodeando Ando</h4>
-        <p>Construyendo con IA en vivo. Lun–vie 12pm CDMX/MTY.</p>
+        <p>Construyendo con IA en vivo. Lun–vie 12pm CDMX.</p>
       </a>
       <a href="https://empleadodigital.mx" class="build-card">
         <div class="label">PRODUCTO · ACTIVO</div>
@@ -214,18 +196,17 @@ footer { border-top: 1px solid var(--color-border-subtle); padding: 2rem 0; marg
 
   <!-- ABOUT -->
   <section class="section" id="about">
-    <div class="section-eyebrow">ABOUT · BIO</div>
-    <h2>Sobre mi</h2>
+    <div class="section-eyebrow">About</div>
+    <h2>Bio</h2>
 
-    <div class="bio-section">
-      <div class="bio-photo">
+    <div style="display:grid;grid-template-columns:340px 1fr;gap:var(--space-12);align-items:start;margin-top:var(--space-8)">
+      <div class="about-photo">
         <img src="../assets/photos/headshot-bw-arms-crossed.jpg" alt="Mauricio Cruz">
       </div>
-      <div class="bio-text">
-        <p><strong>Operator y builder mexicano</strong> enfocado en hacer que la IA sea operacional para empresas en México. Fundador de EmpleadoDigital.mx, donde despliego agentes de IA en infraestructura local (Mac mini + dashboard + mantenimiento mensual) para PyMEs.</p>
-        <p>Soy <strong>CPP de profesión</strong> — formación en finanzas y operaciones — lo cual me da el chip operativo para entender qué problemas valen la pena automatizar y cuáles no. No soy un dev que descubrió IA. Soy un operator que aprendió a construir.</p>
-        <p>En paralelo opero <strong>BandaWeb3</strong>, el archivo más grande de podcasts Web3 en español con 390+ episodios. Cada día de lunes a viernes a las 12pm CDMX/MTY transmito <strong>Vibecodeando Ando</strong>, donde construyo productos con IA en tiempo real.</p>
-        <p>Filosofía: proof of value sobre proof of concept. Antes de pitchar features, demuestro outcomes — revenue generado, horas ahorradas, deals cerrados. Activo en Ethereum México y mxweb3. Publico como <a href="https://x.com/meximalist">@meximalist</a>.</p>
+      <div>
+        <p style="color:var(--color-text-secondary);font-size:var(--fs-base);margin:0 0 var(--space-3);max-width:640px"><strong style="color:var(--color-text-primary);font-weight:500">Operator y builder mexicano</strong> enfocado en hacer que la IA sea operacional para empresas en México. Fundador de EmpleadoDigital.mx, donde despliego agentes de IA en infraestructura local (Mac mini + dashboard + mantenimiento mensual) para PyMEs.</p>
+        <p style="color:var(--color-text-secondary);font-size:var(--fs-base);margin:0 0 var(--space-3);max-width:640px">En paralelo, construyo en público: opero <strong style="color:var(--color-text-primary);font-weight:500">BandaWeb3</strong>, el archivo más grande de podcasts Web3 en español con 390+ episodios. Cada día de lunes a viernes a las 12pm CDMX transmito <strong style="color:var(--color-text-primary);font-weight:500">Vibecodeando Ando</strong>, donde construyo productos con IA en tiempo real.</p>
+        <p style="color:var(--color-text-secondary);font-size:var(--fs-base);margin:0;max-width:640px">Filosofía: proof of value sobre proof of concept. Antes de pitchar features, demuestro outcomes — revenue generado, horas ahorradas, deals cerrados. Activo en Ethereum México y mxweb3. Publico como <a href="https://x.com/meximalist">@meximalist</a>.</p>
       </div>
     </div>
   </section>
@@ -234,7 +215,7 @@ footer { border-top: 1px solid var(--color-border-subtle); padding: 2rem 0; marg
   <section class="section" id="contact">
     <div class="contact">
       <div>
-        <div class="section-eyebrow" style="margin-bottom:0.75rem">CONTACT</div>
+        <div class="section-eyebrow" style="margin-bottom:var(--space-3)">Contact</div>
         <h2>Inquiries de negocio</h2>
         <p>Advisory selectivo para empresas mexicanas evaluando AI-native operations. Press y podcast hosts también — m@meximalist.com.</p>
         <a href="https://call.mexi.wtf" class="btn btn-primary">Agenda 30 min →</a>
@@ -244,7 +225,7 @@ footer { border-top: 1px solid var(--color-border-subtle); padding: 2rem 0; marg
         <div class="row"><span class="label">Calendar</span><a href="https://call.mexi.wtf">call.mexi.wtf</a></div>
         <div class="row"><span class="label">Builder</span><a href="https://mexi.wtf">mexi.wtf</a></div>
         <div class="row"><span class="label">X</span><a href="https://x.com/meximalist">@meximalist</a></div>
-        <div class="row"><span class="label">Loc</span><span style="color:var(--color-text-secondary)">Monterrey, MX</span></div>
+        <div class="row"><span class="label">Loc</span><span style="color:var(--color-text-secondary)">Ciudad de México</span></div>
         <div class="row"><span class="label">Idioma</span><span style="color:var(--color-text-secondary)">ES · EN</span></div>
       </div>
     </div>
@@ -254,8 +235,8 @@ footer { border-top: 1px solid var(--color-border-subtle); padding: 2rem 0; marg
 
 <footer>
   <div class="foot-inner">
-    <div>© 2026 MAURICIO CRUZ · MADE IN MTY · MX</div>
-    <div>BUILDER SIDE → <a href="https://mexi.wtf">mexi.wtf</a></div>
+    <div>© 2026 Mauricio Cruz · Made in México</div>
+    <div>También construyo en público en <a href="https://mexi.wtf">mexi.wtf</a></div>
   </div>
 </footer>
 

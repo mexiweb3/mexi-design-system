@@ -1,102 +1,82 @@
 /*
- * Theme: meximalist.com — Operator surface
- * Direction: Norte Industrial × Editorial
- * Vibe: Stripe Press × Ramp × Tec de Monterrey premium edition
+ * Theme: meximalist.com — Professional surface
+ * Audience: B2B clients, press, partners, investors, recruiters
+ * Vibe: editorial, restrained, capitalized, real photography, more whitespace
  */
 
 @import url('../../tokens/tokens.css');
 
 [data-theme="meximalist"] {
-  /* Theme accent: noche (sober editorial blue) */
-  --theme-accent: var(--color-noche);
-  --theme-accent-hover: var(--color-noche-hover);
-  --theme-accent-muted: var(--color-noche-muted);
-  --theme-accent-border: rgba(30, 58, 138, 0.40);
-
-  /* Industrial accent for data/numbers (always amber, never noche on data) */
-  --theme-data: var(--color-amber);
-
   /* Background — solid, less glassmorphism */
-  --theme-bg: var(--color-bg-steel);
-  --theme-surface: var(--color-bg-concrete);
-  --theme-surface-elevated: var(--color-bg-graphite);
+  --theme-bg: var(--color-bg-primary);
+  --theme-surface: var(--color-bg-tertiary);
+  --theme-surface-blur: 0;
+  --theme-surface-border: var(--color-border-default);
 
-  /* Typography — Editorial leads */
-  --theme-font-h1: var(--font-editorial);
-  --theme-h1-weight: 600;
-  --theme-h1-italic: italic;
-  --theme-font-display: var(--font-display);
-  --theme-font-body: var(--font-body);
+  /* Accent register — emerald as accent only, no indigo */
+  --theme-accent: var(--color-accent-primary);
+  --theme-accent-secondary: var(--color-text-secondary);
+  --theme-accent-alert: var(--color-accent-alert);
+
+  /* Typography — Inter leads, Exo 2 only on H1 */
+  --theme-font-display: var(--font-body);
+  --theme-h1-weight: var(--fw-bold);
   --theme-h1-case: none;
+  --theme-prompt-symbol: '';
 
-  /* Motion — conservative */
+  /* Motion — conservative, no playful spring */
   --theme-card-hover-y: -1px;
   --theme-button-easing: var(--ease-out);
 
-  /* Avatar */
-  --theme-avatar-shape: round;
+  /* Avatar — real headshot */
+  --theme-avatar-asset: url('../../assets/avatar/headshot.jpg');
+  --theme-avatar-border: 0;
+  --theme-avatar-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Light "press mode" */
+/* Light "press mode" override — only on meximalist.com */
 [data-theme="meximalist"][data-mode="light"] {
-  --theme-bg: var(--color-bg-bone);
+  --theme-bg: var(--color-bg-inverse);
   --theme-surface: #ffffff;
+  --theme-surface-border: rgba(0, 0, 0, 0.08);
   --color-text-primary: var(--color-text-inverse);
-  --color-text-secondary: var(--color-text-inverse-secondary);
+  --color-text-secondary: #525252;
   --color-text-tertiary: #737373;
-  --color-border-subtle: rgba(12, 10, 9, 0.08);
-  --color-border-default: rgba(12, 10, 9, 0.12);
 }
 
-/* Editorial H1 — serif italic */
-[data-theme="meximalist"] h1 {
-  font-family: var(--theme-font-h1);
-  font-weight: var(--theme-h1-weight);
-  font-style: var(--theme-h1-italic);
-  font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  letter-spacing: var(--ls-editorial);
-  line-height: var(--lh-tight);
-}
-
-[data-theme="meximalist"] h2,
-[data-theme="meximalist"] h3 {
-  font-family: var(--theme-font-display);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-tight);
-}
-
-/* Industrial detail: monospace for numbers, dates, IDs */
-[data-theme="meximalist"] .data,
-[data-theme="meximalist"] .stat,
-[data-theme="meximalist"] time,
-[data-theme="meximalist"] .meta {
-  font-family: var(--font-mono);
-  font-feature-settings: 'tnum';
-}
-
-/* Card — subtle, editorial, less radius */
+/* Editorial component variants */
 [data-theme="meximalist"] .card {
   background: var(--theme-surface);
-  border: 1px solid var(--color-border-subtle);
+  border: 1px solid var(--theme-surface-border);
   border-radius: var(--radius-lg);
-  transition: border-color var(--duration-fast) var(--theme-button-easing),
-              transform var(--duration-fast) var(--theme-button-easing);
+  transition: transform var(--duration-fast) var(--theme-button-easing),
+              border-color var(--duration-fast) var(--theme-button-easing);
 }
 
 [data-theme="meximalist"] .card:hover {
   transform: translateY(var(--theme-card-hover-y));
-  border-color: var(--theme-accent-border);
+  border-color: var(--color-border-accent);
 }
 
-/* Editorial section header: small caps + hairline */
-[data-theme="meximalist"] .section-header::before {
+[data-theme="meximalist"] h1 {
+  font-family: var(--font-display);
+  font-weight: var(--theme-h1-weight);
+  letter-spacing: var(--ls-tight);
+}
+
+[data-theme="meximalist"] h2,
+[data-theme="meximalist"] h3,
+[data-theme="meximalist"] h4 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+}
+
+/* Editorial details: hairline accent under headings */
+[data-theme="meximalist"] .section-header::after {
   content: '';
-}
-
-[data-theme="meximalist"] .section-eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  letter-spacing: var(--ls-industrial);
-  text-transform: uppercase;
-  color: var(--theme-data);
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--theme-accent);
+  margin-top: var(--space-3);
 }

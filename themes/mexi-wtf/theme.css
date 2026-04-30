@@ -1,82 +1,67 @@
 /*
  * Theme: mexi.wtf — Builder hub
- * Direction: Builder Punk light (toxic green + amber + sand)
- * Vibe: Vercel × Internet Computer × narco-aesthetic underground × regio
+ * Audience: builders, devs, AI/crypto curious, Spanish-speaking community
+ * Vibe: dark-first, terminal aesthetic, lowercase, glassmorphism, micro-elevations
  */
 
 @import url('../../tokens/tokens.css');
 
 [data-theme="mexi-wtf"] {
-  /* Theme accent: toxic (electric green) — primary builder energy */
-  --theme-accent: var(--color-toxic);
-  --theme-accent-hover: #a3e635;
-  --theme-accent-muted: var(--color-toxic-muted);
-  --theme-accent-border: rgba(132, 204, 22, 0.40);
-
-  /* Secondary: amber (industrial warmth) */
-  --theme-accent-secondary: var(--color-amber);
-  --theme-accent-secondary-muted: var(--color-amber-muted);
-
-  /* Background */
-  --theme-bg: var(--color-bg-steel);
-  --theme-surface: rgba(42, 45, 51, 0.7);
+  /* Background — full glassmorphism stack */
+  --theme-bg: var(--color-bg-gradient);
+  --theme-surface: rgba(26, 26, 26, 0.8);
   --theme-surface-blur: var(--blur-glass);
   --theme-surface-border: var(--color-border-subtle);
 
-  /* Typography — display lowercase */
+  /* Accent registers — both emerald and indigo are protagonists */
+  --theme-accent: var(--color-accent-primary);
+  --theme-accent-secondary: var(--color-accent-secondary);
+  --theme-accent-alert: var(--color-accent-alert);
+
+  /* Typography — Exo 2 leads */
   --theme-font-display: var(--font-display);
-  --theme-font-body: var(--font-body);
+  --theme-h1-weight: var(--fw-bold);
   --theme-h1-case: lowercase;
   --theme-prompt-symbol: '>';
+  --theme-prompt-color: var(--color-accent-primary);
 
-  /* Motion — playful */
+  /* Motion — micro-elevations on hover, slight playfulness */
   --theme-card-hover-y: -2px;
   --theme-button-easing: var(--ease-spring);
 
-  /* Avatar */
-  --theme-avatar-shape: rounded;
+  /* Avatar — ape canon */
+  --theme-avatar-asset: url('../../assets/avatar/ape.png');
+  --theme-avatar-border: 4px solid var(--color-border-accent);
+  --theme-avatar-shadow: var(--shadow-avatar);
 }
 
-/* All headings lowercase */
-[data-theme="mexi-wtf"] h1,
-[data-theme="mexi-wtf"] h2,
-[data-theme="mexi-wtf"] h3,
-[data-theme="mexi-wtf"] h4 {
-  text-transform: var(--theme-h1-case);
-  font-family: var(--theme-font-display);
-  letter-spacing: var(--ls-tight);
-}
-
-[data-theme="mexi-wtf"] h1 {
-  font-weight: var(--fw-black);
-}
-
-/* Mono detail for handles, dates, file paths */
-[data-theme="mexi-wtf"] .handle,
-[data-theme="mexi-wtf"] .meta,
-[data-theme="mexi-wtf"] code {
-  font-family: var(--font-mono);
-}
-
-/* Card with glass on dark */
+/* Builder-specific component variants */
 [data-theme="mexi-wtf"] .card {
   background: var(--theme-surface);
   backdrop-filter: blur(var(--theme-surface-blur));
   border: 1px solid var(--theme-surface-border);
   border-radius: var(--radius-xl);
   transition: transform var(--duration-normal) var(--ease-out),
-              border-color var(--duration-normal) var(--ease-out);
+              border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
 }
 
 [data-theme="mexi-wtf"] .card:hover {
   transform: translateY(var(--theme-card-hover-y));
-  border-color: var(--theme-accent-border);
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-card-hover);
 }
 
-/* Prompt-style section headers */
 [data-theme="mexi-wtf"] .section-header::before {
   content: var(--theme-prompt-symbol) ' ';
-  color: var(--theme-accent);
-  font-family: var(--font-mono);
+  color: var(--theme-prompt-color);
+  font-family: var(--font-display);
   font-weight: var(--fw-semibold);
+}
+
+[data-theme="mexi-wtf"] h1,
+[data-theme="mexi-wtf"] h2,
+[data-theme="mexi-wtf"] h3 {
+  text-transform: var(--theme-h1-case);
+  font-family: var(--theme-font-display);
 }

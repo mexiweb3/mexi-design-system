@@ -1,55 +1,42 @@
 {
   "$schema": "https://design-tokens.org/schema",
-  "_meta": {
-    "version": "2.0",
-    "direction": "Norte Industrial × Editorial — Monterrey-rooted operator brand",
-    "updated": "2026-04-29"
-  },
   "color": {
     "background": {
-      "steel":    { "value": "#1c1f23", "description": "Primary canvas — warm dark, not pure black" },
-      "concrete": { "value": "#2a2d33", "description": "Secondary surface — elevated cards" },
-      "graphite": { "value": "#3a3d42", "description": "Tertiary surface — inputs, hover" },
-      "bone":     { "value": "#f0ebe0", "description": "Light mode canvas — warm cream, paper-like" },
-      "ink":      { "value": "#0c0a09", "description": "Text on light, premium dark inverse" }
+      "primary":   { "value": "#0a0a0a", "description": "Base canvas (mexi-black)" },
+      "secondary": { "value": "#111111", "description": "Subtle elevation (mexi-dark)" },
+      "tertiary":  { "value": "#1a1a1a", "description": "Card surface (mexi-gray)" },
+      "inverse":   { "value": "#f5f5f5", "description": "Light mode canvas (cream)" }
     },
     "accent": {
-      "amber":           { "value": "#d97706", "description": "Industrial primary — high-vis operario / data highlight" },
-      "amber-hover":     { "value": "#f59e0b", "description": "Amber hover state" },
-      "amber-muted":     { "value": "rgba(217, 119, 6, 0.18)" },
-      "noche":           { "value": "#1e3a8a", "description": "Editorial accent — sober, regio fintech blue (meximalist primary)" },
-      "noche-hover":     { "value": "#2547a8" },
-      "noche-muted":     { "value": "rgba(30, 58, 138, 0.18)" },
-      "toxic":           { "value": "#84cc16", "description": "Builder accent — electric green (mexi.wtf only)" },
-      "toxic-muted":     { "value": "rgba(132, 204, 22, 0.20)" },
-      "rust":            { "value": "#7c2d12", "description": "Highlights raros, badges editoriales" },
-      "alert":           { "value": "#eab308", "description": "Yellow construction — attention" },
-      "destructive":     { "value": "#dc2626", "description": "Errors, destructive" }
+      "primary":       { "value": "#10b981", "description": "Emerald — CTAs, links, brand" },
+      "primary-hover": { "value": "#34d399", "description": "Emerald light — hover state" },
+      "primary-muted": { "value": "rgba(16, 185, 129, 0.15)", "description": "Translucent emerald — backgrounds, borders" },
+      "secondary":     { "value": "#6366f1", "description": "Indigo — community, secondary sections" },
+      "secondary-muted": { "value": "rgba(99, 102, 241, 0.20)", "description": "Translucent indigo" },
+      "alert":         { "value": "#f59e0b", "description": "Amber — new, attention" },
+      "destructive":   { "value": "#ef4444", "description": "Red — errors, destructive actions" }
     },
     "text": {
-      "primary":   { "value": "#f0ebe0", "description": "Bone — primary on dark" },
-      "secondary": { "value": "#a8a39a", "description": "Stone — body secondary" },
-      "tertiary":  { "value": "#6b6660", "description": "Stone dark — metadata" },
-      "disabled":  { "value": "#4a4641", "description": "Disabled" },
-      "inverse":   { "value": "#0c0a09", "description": "Ink black on light" },
-      "inverse-secondary": { "value": "#525252", "description": "Body secondary on light" }
+      "primary":   { "value": "#f5f5f5", "description": "Main text on dark" },
+      "secondary": { "value": "#9ca3af", "description": "Body secondary, captions" },
+      "tertiary":  { "value": "#6b7280", "description": "De-emphasized, metadata" },
+      "disabled":  { "value": "#525252", "description": "Disabled, footer text" },
+      "inverse":   { "value": "#0a0a0a", "description": "Text on light backgrounds" }
     },
     "border": {
-      "subtle":   { "value": "rgba(240, 235, 224, 0.06)" },
-      "default":  { "value": "rgba(240, 235, 224, 0.12)" },
-      "strong":   { "value": "rgba(240, 235, 224, 0.20)" },
-      "amber":    { "value": "rgba(217, 119, 6, 0.40)" },
-      "noche":    { "value": "rgba(30, 58, 138, 0.40)" },
-      "toxic":    { "value": "rgba(132, 204, 22, 0.40)" }
+      "subtle":  { "value": "rgba(255, 255, 255, 0.05)", "description": "Card outlines on dark" },
+      "default": { "value": "rgba(255, 255, 255, 0.10)", "description": "Standard border" },
+      "accent":  { "value": "rgba(16, 185, 129, 0.30)", "description": "Emerald hover border" },
+      "strong":  { "value": "rgba(16, 185, 129, 0.50)", "description": "Featured card border" }
     },
     "social": {
-      "x":         { "value": "#f0ebe0" },
+      "x":         { "value": "#f5f5f5" },
       "instagram": { "value": "#ec4899" },
-      "tiktok":    { "value": "#f0ebe0" },
-      "youtube":   { "value": "#dc2626" },
+      "tiktok":    { "value": "#f5f5f5" },
+      "youtube":   { "value": "#ef4444" },
       "telegram":  { "value": "#3b82f6" },
-      "linkedin":  { "value": "#1e3a8a" },
-      "github":    { "value": "#f0ebe0" },
+      "linkedin":  { "value": "#2563eb" },
+      "github":    { "value": "#f5f5f5" },
       "spotify":   { "value": "#22c55e" }
     }
   }
